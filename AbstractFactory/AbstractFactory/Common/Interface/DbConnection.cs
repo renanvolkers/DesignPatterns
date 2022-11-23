@@ -1,7 +1,7 @@
-﻿namespace AbstractFactory.Common
+﻿namespace AbstractFactory.Common.Interface
 {
     /* Abstract Conection */
-    public class DbConnection
+   public abstract class DbConnection
     {
         public abstract void Open();
     }
