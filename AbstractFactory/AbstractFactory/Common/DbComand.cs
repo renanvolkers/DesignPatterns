@@ -1,4 +1,4 @@
-﻿namespace AbstractFactory.Common.SqlServe
+﻿namespace AbstractFactory.Common
 {
     public abstract class DbCommand
     {

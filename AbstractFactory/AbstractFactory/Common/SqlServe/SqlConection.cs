@@ -1,5 +1,5 @@
 ﻿using AbstractFactory.Common.Interface;
-namespace AbstractFactory.Common.Concrete
+namespace AbstractFactory.Common.SqlServe
 {
     /* Concret SqlConnection */
     public class SqlConnection : DbConnection

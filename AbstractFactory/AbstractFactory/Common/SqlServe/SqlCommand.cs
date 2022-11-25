@@ -1,6 +1,7 @@
-﻿namespace AbstractFactory.Common.SqlServe
+﻿using AbstractFactory.Common;
+namespace AbstractFactory.Common.SqlServe
 {
-    public class SqComand :DbCommand
+    public class SqlCommand :DbCommand
     {
         public override void Execute()
         {
