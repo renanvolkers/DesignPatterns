@@ -1,7 +1,8 @@
-﻿using AbstractFactory.Common.Interface;
-namespace AbstractFactory.Common.MongoDb
+﻿using AbstractFactory.Data.Interface;
+namespace AbstractFactory.Data.SqlServe
 {
-    public class MongoConnection : DbConnection
+    /* Concret SqlConnection */
+    public class SqlConnection : DbConnection
     {
         public override void Open()
         {

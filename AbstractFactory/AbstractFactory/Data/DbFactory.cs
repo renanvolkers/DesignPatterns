@@ -1,6 +1,6 @@
-﻿using AbstractFactory.Common.Interface;
+﻿using AbstractFactory.Data.Interface;
 
-namespace AbstractFactory.Common
+namespace AbstractFactory.Data
 {
     public abstract class DbFactory
     {

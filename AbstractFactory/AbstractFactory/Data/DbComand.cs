@@ -1,4 +1,4 @@
-﻿namespace AbstractFactory.Common
+﻿namespace AbstractFactory.Data
 {
     public abstract class DbCommand
     {

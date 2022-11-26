@@ -1,6 +1,7 @@
-﻿using AbstractFactory.Common.Interface;
+﻿using AbstractFactory.Data;
+using AbstractFactory.Data.Interface;
 
-namespace AbstractFactory.Common.SqlServe
+namespace AbstractFactory.Data.SqlServe
 {
     public abstract class SqlFactory : DbFactory
     {
