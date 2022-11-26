@@ -1,5 +1,4 @@
-﻿using AbstractFactory.Common;
-namespace AbstractFactory.Common.SqlServe
+﻿namespace AbstractFactory.Common.SqlServe
 {
     public class SqlCommand :DbCommand
     {

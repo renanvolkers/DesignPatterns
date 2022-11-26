@@ -1,5 +1,4 @@
 ﻿using AbstractFactory.Common.Interface;
-using AbstractFactory.Common;
 
 namespace AbstractFactory.Common.SqlServe
 {
