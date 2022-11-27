@@ -1,5 +1,4 @@
-﻿using AbstractFactory.Data;
-using AbstractFactory.Data.Interface;
+﻿using AbstractFactory.Data.Interface;
 
 namespace AbstractFactory.Data.SqlServe
 {
