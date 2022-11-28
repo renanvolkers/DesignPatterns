@@ -2,7 +2,7 @@
 
 namespace AbstractFactory.Data
 {
-    public abstract class DbFactory
+    public abstract class DbContextFactory
     {
         public abstract DbConnection CreateConnection();
 
