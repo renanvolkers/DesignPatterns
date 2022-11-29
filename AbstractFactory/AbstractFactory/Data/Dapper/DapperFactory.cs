@@ -2,7 +2,7 @@
 
 namespace AbstractFactory.Data.Dapper
 {
-    public class DapperFactory : DbFactory
+    public class DapperFactory : DbContextFactory
     {
         public override DbCommand CreateCommand()
         {
