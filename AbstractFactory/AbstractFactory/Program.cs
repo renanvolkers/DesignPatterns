@@ -1,14 +1,35 @@
 
+using AbstractFactory;
 using AbstractFactory.StorePizza;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.OpenApi.Models;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddControllers().AddJsonOptions(options =>
+           options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+builder.Services.AddSwaggerGen(op =>
+{
+    op.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Delivery Pizza",
+        Version = "v1",
+        Description = "The Goal project is show the use pattern Abstract Factory",
+        Contact = new OpenApiContact
+        {
+            Name = "Renan Alpoim Volkers",
+            Email = "renanvolkers@hotmail.com",
+            Url = new Uri("https://www.linkedin.com/in/renanvolkers/"),
+
+        }
+    });
+    
+});
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
@@ -18,57 +39,24 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-//builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(options =>
-//{
-//    options.SerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
-//});
-//builder.Services.Configure<Microsoft.AspNetCore.Mvc.JsonOptions>(options =>
-//{
-//    options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
-//});
-var summaries = new[]
-{
-    "Freezing", "Bracing", " Chilly  ", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
 
 
-app.MapGet("/weatherforecast", () =>
+
+app.MapGet("/StorePizza/{city}/{typePizza}", (
+   [FromQuery] City city,
+   [FromQuery] TypePizza typePizza
+   ) =>
 {
-    var forecast = Enumerable.Range(1, 2).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
+    DependentPizzaStore main = new DependentPizzaStore();
+
+    var pizza = main.CreatePizza(city, typePizza);
+    return pizza is Pizza ? Results.Ok(pizza)
+                          : Results.NotFound();
 })
-.WithName("GetWeatherForecast")
-.WithOpenApi();
-
-
-app.MapGet("/StorePizza/{typePizza}", (TypePizza typePizza) =>
-{
-    TestPizza main = new TestPizza();
-    
-    return main.Execute(typePizza);
-})
+.ProducesValidationProblem()
+.Produces(StatusCodes.Status400BadRequest)
 .WithName("StorePizza")
 .WithOpenApi();
 
-
-
-//app.MapGet("/fornecedor", [AllowAnonymous] async (
-//    SqlCommand context) =>
-//    await context..ToListAsync())
-//    .WithName("GetFornecedor")
-//    .WithTags("Fornecedor");
-
-
 app.Run();
 
-internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
