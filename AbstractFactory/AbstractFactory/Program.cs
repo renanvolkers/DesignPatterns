@@ -1,4 +1,6 @@
-using AbstractFactory.Data;
+
+using AbstractFactory.StorePizza;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,10 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
 var app = builder.Build();
-
-
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -19,10 +18,19 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+//builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(options =>
+//{
+//    options.SerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
+//});
+//builder.Services.Configure<Microsoft.AspNetCore.Mvc.JsonOptions>(options =>
+//{
+//    options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
+//});
 var summaries = new[]
 {
     "Freezing", "Bracing", " Chilly  ", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
+
 
 app.MapGet("/weatherforecast", () =>
 {
@@ -38,6 +46,25 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast")
 .WithOpenApi();
+
+
+app.MapGet("/StorePizza/{typePizza}", (TypePizza typePizza) =>
+{
+    TestPizza main = new TestPizza();
+    
+    return main.Execute(typePizza);
+})
+.WithName("StorePizza")
+.WithOpenApi();
+
+
+
+//app.MapGet("/fornecedor", [AllowAnonymous] async (
+//    SqlCommand context) =>
+//    await context..ToListAsync())
+//    .WithName("GetFornecedor")
+//    .WithTags("Fornecedor");
+
 
 app.Run();
 
