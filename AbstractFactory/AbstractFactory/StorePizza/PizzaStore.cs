@@ -1,5 +1,6 @@
 ﻿namespace AbstractFactory.StorePizza
 {
+     \\Concrete Factory 
     public abstract class PizzaStore
     {
        
