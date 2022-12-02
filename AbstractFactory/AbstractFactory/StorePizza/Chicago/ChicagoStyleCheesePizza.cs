@@ -9,6 +9,7 @@ namespace AbstractFactory.StorePizza
             Name = "Chicago Style Deep Dish Cheese Pizza";
             Dough = "Extra Thick Crust Dough";
             Sauce = "Plum tomato Sauce";
+            Size =5;
 
             Toppings.Add("Shredded Mozzarella Cheese");
         }
