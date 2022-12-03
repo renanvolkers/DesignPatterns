@@ -3,7 +3,7 @@
 
 
     //Abstract Factory
-    public abstract class PizzaStore
+    public abstract class PizzaStoreAbstractFactory
     {
        
 
