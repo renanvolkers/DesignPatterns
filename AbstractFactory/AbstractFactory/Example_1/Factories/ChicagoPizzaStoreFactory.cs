@@ -1,10 +1,11 @@
-﻿using AbstractFactory.Domain.Interface;
-using AbstractFactory.Domain.ValueObj;
+﻿using AbstractFactory.Example_1.Domain.Entities;
+using AbstractFactory.Example_1.Domain.Interface;
+using AbstractFactory.Example_1.Domain.ValueObj;
 using AbstractFactory.Factories.AbstractFactory;
 
 namespace AbstractFactory.StorePizza
 {
-        // Factory Concrete 
+    // Factory Concrete 
 
     public class ChicagoPizzaStoreFactory : PizzaStoreAbstractFactory
     {

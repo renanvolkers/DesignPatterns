@@ -1,5 +1,5 @@
-﻿using AbstractFactory.Domain.Interface;
-using AbstractFactory.Domain.ValueObj;
+﻿using AbstractFactory.Example_1.Domain.Interface;
+using AbstractFactory.Example_1.Domain.ValueObj;
 using AbstractFactory.StorePizza;
 
 namespace AbstractFactory.Factories.AbstractFactory
