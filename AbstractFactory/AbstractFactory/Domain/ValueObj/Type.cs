@@ -1,7 +1,7 @@
 ﻿using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
-namespace AbstractFactory.StorePizza
+namespace AbstractFactory.Domain.ValueObj
 {
     public enum TypePizza
     {

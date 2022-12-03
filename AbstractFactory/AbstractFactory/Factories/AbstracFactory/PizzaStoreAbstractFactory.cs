@@ -1,4 +1,8 @@
-﻿namespace AbstractFactory.StorePizza
+﻿using AbstractFactory.Domain.Interface;
+using AbstractFactory.Domain.ValueObj;
+using AbstractFactory.StorePizza;
+
+namespace AbstractFactory.Factories.AbstractFactory
 {
 
 
@@ -7,9 +11,9 @@
     {
        
 
-        public Pizza OrderPizza(TypePizza type)
+        public IPizza OrderPizza(TypePizza type)
         {
-            Pizza? pizza;
+            IPizza? pizza;
             pizza = CreatePizza(type);
 
             pizza.Prepare();
@@ -20,6 +24,6 @@
             return pizza;
         }
 
-       protected  abstract Pizza CreatePizza(TypePizza type);
+       protected  abstract IPizza CreatePizza(TypePizza type);
     }   
 }

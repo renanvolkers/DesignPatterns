@@ -1,22 +1,26 @@
-﻿namespace AbstractFactory.StorePizza
+﻿using AbstractFactory.Domain.Interface;
+using AbstractFactory.Domain.ValueObj;
+using AbstractFactory.Factories.AbstractFactory;
+
+namespace AbstractFactory.StorePizza
 {
     public class DependentPizzaStore
     {
-        public Pizza CreatePizza(City city, TypePizza typePizza)
+        public IPizza CreatePizza(City city, TypePizza typePizza)
         {
-            Pizza pizza = null;
+            IPizza pizza = null;
             PizzaStoreAbstractFactory factory;
             
             if (City.NY.Equals(city))
             {
-                factory = new NYPizzaStore();
+                factory = new NYPizzaStoreFactory();
                 pizza = factory.OrderPizza(typePizza);
                 Console.WriteLine(pizza.StatusDescription);
 
             }
             else if (City.Chicago.Equals(city))
             {
-                factory = new ChicagoPizzaStore();
+                factory = new ChicagoPizzaStoreFactory();
                 pizza = factory.OrderPizza(typePizza);
                 Console.WriteLine(pizza.StatusDescription);
 

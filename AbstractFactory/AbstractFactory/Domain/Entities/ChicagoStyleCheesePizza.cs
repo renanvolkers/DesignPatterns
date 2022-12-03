@@ -1,8 +1,9 @@
-﻿using System.Text;
+﻿using AbstractFactory.Domain.Interface;
+using System.Text;
 
 namespace AbstractFactory.StorePizza
 {
-    public class ChicagoStyleCheesePizza : Pizza
+    public class ChicagoStyleCheesePizza : IPizza
     {
         public ChicagoStyleCheesePizza()
         {

@@ -1,9 +1,14 @@
-﻿namespace AbstractFactory.StorePizza
+﻿using AbstractFactory.Domain.Entities;
+using AbstractFactory.Domain.Interface;
+using AbstractFactory.Domain.ValueObj;
+using AbstractFactory.Factories.AbstractFactory;
+
+namespace AbstractFactory.StorePizza
 {
 //Factory Concrete  
-    public class NYPizzaStore: PizzaStoreAbstractFactory
+    public class NYPizzaStoreFactory: PizzaStoreAbstractFactory
     {
-       protected override  Pizza CreatePizza(TypePizza type)
+       protected override  IPizza CreatePizza(TypePizza type)
         {
             if (type.Equals(TypePizza.Cheese))
             {

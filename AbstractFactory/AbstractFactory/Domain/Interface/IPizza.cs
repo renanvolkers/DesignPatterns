@@ -1,8 +1,8 @@
 ﻿using System.Text;
 
-namespace AbstractFactory.StorePizza
+namespace AbstractFactory.Domain.Interface
 {
-    public abstract class Pizza
+    public abstract class IPizza
     {
         //Product 
         public string? Name { get; set; }
@@ -11,7 +11,7 @@ namespace AbstractFactory.StorePizza
         public int Size { get; set; }
         public string? StatusDescription { get; set; }
 
-        public List<string> Toppings { get; set; } = new List<string>();
+        public List<string> Toppings { get; set; }
 
         public void Prepare()
         {

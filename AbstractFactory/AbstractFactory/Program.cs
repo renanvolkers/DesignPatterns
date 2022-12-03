@@ -1,3 +1,5 @@
+using AbstractFactory.Domain.Interface;
+using AbstractFactory.Domain.ValueObj;
 using AbstractFactory.StorePizza;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
@@ -48,7 +50,7 @@ app.MapGet("/StorePizza/{city}/{typePizza}", (
     DependentPizzaStore main = new DependentPizzaStore();
 
     var pizza = main.CreatePizza(city, typePizza);
-    return pizza is Pizza ? Results.Ok(pizza.StatusDescription)
+    return pizza is IPizza ? Results.Ok(pizza.StatusDescription)
                           : Results.NotFound();
 })
 .ProducesValidationProblem()
