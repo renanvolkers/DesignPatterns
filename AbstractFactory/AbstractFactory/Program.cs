@@ -1,7 +1,4 @@
-using AbstractFactory.Example_1.Domain.Entities;
-using AbstractFactory.Example_1.Domain.Interface;
-using AbstractFactory.Example_1.Domain.ValueObj;
-using Microsoft.AspNetCore.Mvc;
+using AbstractFactory.Example_1.EndPoints;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
 
@@ -42,21 +39,8 @@ app.UseHttpsRedirection();
 
 
 
-app.MapGet("/StorePizza/{city}/{typePizza}", (
-   [FromQuery] City city,
-   [FromQuery] TypePizza typePizza
-   ) =>
-{
-    DependentPizzaStore main = new DependentPizzaStore();
+app.MapPizzaEndPoints();
 
-    var pizza = main.CreatePizza(city, typePizza);
-    return pizza is IPizza ? Results.Ok(pizza.StatusDescription)
-                          : Results.NotFound();
-})
-.ProducesValidationProblem()
-.Produces(StatusCodes.Status400BadRequest)
-.WithName("StorePizza")
-.WithOpenApi();
 
 app.Run();
 
