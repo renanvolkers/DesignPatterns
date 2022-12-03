@@ -1,6 +1,6 @@
 ﻿namespace AbstractFactory.StorePizza
 {
-        // Fabric Concrete 
+        // Factory Concrete 
 
     public class ChicagoPizzaStore : PizzaStoreAbstractFactory
     {

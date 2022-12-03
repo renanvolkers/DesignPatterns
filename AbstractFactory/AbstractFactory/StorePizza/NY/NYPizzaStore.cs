@@ -1,6 +1,6 @@
 ﻿namespace AbstractFactory.StorePizza
 {
-//Fabric Concrete  
+//Factory Concrete  
     public class NYPizzaStore: PizzaStoreAbstractFactory
     {
        protected override  Pizza CreatePizza(TypePizza type)
