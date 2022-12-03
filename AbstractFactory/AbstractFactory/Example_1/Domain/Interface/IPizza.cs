@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace AbstractFactory.Domain.Interface
+namespace AbstractFactory.Example_1.Domain.Interface
 {
     public abstract class IPizza
     {
@@ -32,12 +32,14 @@ namespace AbstractFactory.Domain.Interface
             sb.AppendLine("Bake for 25 minutes at 350");
             StatusDescription = sb.ToString();
         }
-        public void Box() {
+        public void Box()
+        {
             var sb = new StringBuilder(StatusDescription);
             sb.AppendLine("Place pizza in official PizzaStore box");
             StatusDescription = sb.ToString();
         }
-        public virtual void Cut() {
+        public virtual void Cut()
+        {
             var sb = new StringBuilder(StatusDescription);
             sb.AppendLine("Cutting the pizza into diagonal slices");
             StatusDescription = sb.ToString();

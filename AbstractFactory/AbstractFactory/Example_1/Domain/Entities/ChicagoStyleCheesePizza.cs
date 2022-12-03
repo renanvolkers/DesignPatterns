@@ -1,7 +1,7 @@
-﻿using AbstractFactory.Domain.Interface;
+﻿using AbstractFactory.Example_1.Domain.Interface;
 using System.Text;
 
-namespace AbstractFactory.StorePizza
+namespace AbstractFactory.Example_1.Domain.Entities
 {
     public class ChicagoStyleCheesePizza : IPizza
     {
@@ -10,7 +10,7 @@ namespace AbstractFactory.StorePizza
             Name = "Chicago Style Deep Dish Cheese Pizza";
             Dough = "Extra Thick Crust Dough";
             Sauce = "Plum tomato Sauce";
-            Size =5;
+            Size = 5;
 
             Toppings.Add("Shredded Mozzarella Cheese");
         }

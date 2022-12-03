@@ -1,6 +1,6 @@
-using AbstractFactory.Domain.Interface;
-using AbstractFactory.Domain.ValueObj;
-using AbstractFactory.StorePizza;
+using AbstractFactory.Example_1.Domain.Entities;
+using AbstractFactory.Example_1.Domain.Interface;
+using AbstractFactory.Example_1.Domain.ValueObj;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;

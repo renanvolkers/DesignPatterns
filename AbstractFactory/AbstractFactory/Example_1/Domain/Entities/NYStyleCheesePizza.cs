@@ -1,5 +1,6 @@
-﻿using AbstractFactory.Domain.Interface;
-namespace AbstractFactory.StorePizza
+﻿using AbstractFactory.Example_1.Domain.Interface;
+
+namespace AbstractFactory.Example_1.Domain.Entities
 {
     public class NYStyleCheesePizza : IPizza
     {
@@ -8,7 +9,7 @@ namespace AbstractFactory.StorePizza
             Name = "NY Style Sauce and Cheese Pizza";
             Dough = "Thin Crust Dough";
             Sauce = "Marinara Sauce";
-            Size =5;
+            Size = 5;
 
             Toppings.Add("Grated Reggiano Cheese");
         }
