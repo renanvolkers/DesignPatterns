@@ -1,6 +1,5 @@
 ﻿namespace AbstractFactory.StorePizza
 {
-     \\Concrete Factory 
 
 
     //Abstract Factory

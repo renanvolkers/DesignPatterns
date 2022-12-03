@@ -4,6 +4,7 @@ namespace AbstractFactory.StorePizza
 {
     public abstract class Pizza
     {
+        //Product 
         public string? Name { get; set; }
         public string? Dough { get; set; }
         public string? Sauce { get; set; }

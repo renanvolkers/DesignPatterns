@@ -1,5 +1,5 @@
 ﻿namespace AbstractFactory.StorePizza
-{\\Concrete product 
+{//Concrete product 
     public class NYStyleVeggiePizza : Pizza
     {
     }
