@@ -7,6 +7,7 @@ namespace AbstractFactory.StorePizza
         public string? Name { get; set; }
         public string? Dough { get; set; }
         public string? Sauce { get; set; }
+        public int Size { get; set; }
         public string? StatusDescription { get; set; }
 
         public List<string> Toppings { get; set; } = new List<string>();
