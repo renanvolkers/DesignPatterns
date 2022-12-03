@@ -3,7 +3,6 @@ using System.Text.Json.Serialization;
 
 namespace AbstractFactory.StorePizza
 {
-   // [Flags]
     public enum TypePizza
     {
         Cheese = 0,
@@ -12,7 +11,6 @@ namespace AbstractFactory.StorePizza
         Pepperoni = 4,
 
     }
-    //[JsonConverter(typeof(City))]
     public enum City
     {
         NY = 0,
