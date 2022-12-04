@@ -12,6 +12,7 @@ namespace AbstractFactory.Example_1.EndPoints
                 .ProducesValidationProblem()
                 .Produces(StatusCodes.Status400BadRequest)
                 .WithName("StorePizza")
+
                 .WithOpenApi() ;
         }
 
