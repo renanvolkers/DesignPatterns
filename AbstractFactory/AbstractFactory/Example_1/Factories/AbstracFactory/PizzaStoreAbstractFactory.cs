@@ -13,7 +13,7 @@ namespace AbstractFactory.Factories.AbstractFactory
 
         public IPizza OrderPizza(TypePizza type)
         {
-            IPizza? pizza;
+            IPizza pizza;
             pizza = CreatePizza(type);
 
             pizza.Prepare();
@@ -24,7 +24,7 @@ namespace AbstractFactory.Factories.AbstractFactory
             return pizza;
         }
 
-       protected  abstract IPizza CreatePizza(TypePizza type);
+       protected  abstract IPizza? CreatePizza(TypePizza type);
 
     }   
 }
