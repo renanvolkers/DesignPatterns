@@ -10,6 +10,7 @@ namespace AbstractFactory.Example_1.Domain.Entities
             Dough = "Thin Crust Dough";
             Sauce = "Marinara Sauce";
             Size = 5;
+            Toppings = new List<string>();
 
             Toppings.Add("Grated Reggiano Cheese");
         }
