@@ -9,7 +9,7 @@ namespace AbstractFactory.StorePizza
 
     public class ChicagoPizzaStoreFactory : PizzaStoreAbstractFactory
     {
-       protected override  IPizza CreatePizza(TypePizza type)
+       protected override  IPizza? CreatePizza(TypePizza type)
         {
 
             if (type.Equals(TypePizza.Cheese))

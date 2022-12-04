@@ -8,7 +8,7 @@ namespace AbstractFactory.StorePizza
     //Factory Concrete  
     public class NYPizzaStoreFactory: PizzaStoreAbstractFactory
     {
-       protected override  IPizza CreatePizza(TypePizza type)
+       protected override  IPizza? CreatePizza(TypePizza type)
         {
             if (type.Equals(TypePizza.Cheese))
             {
