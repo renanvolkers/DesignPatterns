@@ -1,6 +1,7 @@
 ﻿using AbstractFactory.Example_1.Domain.Entities;
 using AbstractFactory.Example_1.Domain.Interface;
 using AbstractFactory.Example_1.Domain.ValueObj;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AbstractFactory.Example_1.EndPoints
 {
@@ -16,7 +17,7 @@ namespace AbstractFactory.Example_1.EndPoints
                 .WithOpenApi() ;
         }
 
-        public static IResult Get(City city, TypePizza typePizza)
+        public static IResult Get([FromQuery] City city, [FromQuery] TypePizza typePizza)
         {
             DependentPizzaStore main = new DependentPizzaStore();
 
