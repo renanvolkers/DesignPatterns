@@ -25,5 +25,6 @@ namespace AbstractFactory.Factories.AbstractFactory
         }
 
        protected  abstract IPizza CreatePizza(TypePizza type);
+
     }   
 }
