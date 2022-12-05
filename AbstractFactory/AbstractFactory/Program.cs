@@ -1,4 +1,7 @@
+using AbstractFactory.Example_1.Domain.Interface;
 using AbstractFactory.Example_1.EndPoints;
+using AbstractFactory.Example_1.Validators;
+using FluentValidation;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
 
@@ -10,6 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers().AddJsonOptions(options =>
            options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+
+builder.Services.AddScoped<IValidator<IPizza>, PizzaValidator>();
 builder.Services.AddSwaggerGen(op =>
 {
     op.SwaggerDoc("v1", new OpenApiInfo
