@@ -1,6 +1,7 @@
 ﻿using AbstractFactory.Example_1.Domain.Entities;
 using AbstractFactory.Example_1.Domain.Interface;
 using AbstractFactory.Example_1.Domain.ValueObj;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AbstractFactory.Example_1.EndPoints
@@ -15,9 +16,19 @@ namespace AbstractFactory.Example_1.EndPoints
                 .WithName("StorePizza")
 
                 .WithOpenApi() ;
+
+            app.MapPost("/StorePizza/{city}/{typePizza}", Create).AddFilter(async (routeHandlerInvocationContext, next) =>
+            {
+                var name = (string)routeHandlerInvocationContext.Parameters[0];
+                if (name == "Bob")
+                {
+                    return Results.Problem("No Bob's allowed");
+                }
+                return await next(routeHandlerInvocationContext);
+            });
         }
 
-        public static IResult Get([FromQuery] City city, [FromQuery] TypePizza typePizza)
+        public static IResult Get(IValidator<IPizza> validator ,[FromQuery] City city, [FromQuery] TypePizza typePizza)
         {
             DependentPizzaStore main = new DependentPizzaStore();
 
@@ -26,5 +37,15 @@ namespace AbstractFactory.Example_1.EndPoints
             return pizza is IPizza ? Results.Ok(pizza.StatusDescription)
                                   : Results.NotFound();
         }
+
+        public static  IResult Create(IPizza pizza,IValidator<IPizza> validator)
+        {
+            DependentPizzaStore main = new DependentPizzaStore();
+            
+
+            return pizza is IPizza ? Results.Ok(pizza.StatusDescription)
+                                  : Results.NotFound();
+        }
+
     }
 }
