@@ -13,7 +13,7 @@ namespace AbstractFactory.Factories.AbstractFactory
 
         public IPizza OrderPizza(TypePizza type)
         {
-            IPizza? pizza;
+            IPizza pizza;
             pizza = CreatePizza(type);
 
             pizza.Prepare();
