@@ -26,7 +26,7 @@ namespace AbstractFactory.Example_1.EndPoints
                     return Results.Problem("No Bob's allowed");
                 }
                 return await next(routeHandlerInvocationContext);
-            });
+            }).ProducesValidationProblem();
         }
 
         public static IResult Get(IValidator<IPizza> validator ,[FromQuery] City city, [FromQuery] TypePizza typePizza)
