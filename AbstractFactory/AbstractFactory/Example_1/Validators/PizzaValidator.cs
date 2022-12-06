@@ -7,7 +7,7 @@ namespace AbstractFactory.Example_1.Validators
     {
         public PizzaValidator()
         {
-            RuleFor(o=> o.Name).NotEmpty().NotNull().MinimumLength(5);
+            RuleFor(o=> o.Name).NotEmpty().NotNull().MinimumLength(4);
             RuleFor(o => o.Size).NotNull().GreaterThanOrEqualTo(2);
 
         }
