@@ -4,6 +4,11 @@
 
 ![Coverage](https://github.com/renanvolkers/DesignPatterns/main/coverage_badge.svg?sanitize=true)
 
+# Main Stacks
+* .NET 7 
+* Minimal API
+* Entity Framework
+
 
 # DesignPatterns
 Are typical solutions to common problems in software design. Each pattern is like a blueprint that you can customize to solve a particular design problem in your code.
