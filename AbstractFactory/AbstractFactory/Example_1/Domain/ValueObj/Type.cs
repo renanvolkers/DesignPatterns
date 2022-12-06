@@ -16,6 +16,7 @@ namespace AbstractFactory.Example_1.Domain.ValueObj
         NY = 0,
         Chicago = 1,
         California = 2,
+		Boston = 3,
 
     }
 
@@ -30,6 +31,7 @@ namespace AbstractFactory.Example_1.Domain.ValueObj
         PushNotification = 3,
         UXP = 4,
         IntermediaryApp = 5,
-        YouthApp = 6
+        YouthApp = 6,
+		 ArehApp = 7
     }
 }
