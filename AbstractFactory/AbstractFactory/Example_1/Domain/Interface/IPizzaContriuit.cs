@@ -2,7 +2,7 @@
 
 namespace AbstractFactory.Example_1.Domain.Interface
 {
-    public abstract class IPizza
+    public abstract class IPizzaContriuit
     {
         //Product 
         public string? Name { get; set; }
