@@ -8,7 +8,7 @@ namespace AbstractFactory.Example_1.Domain.Entities
         {
             Name = "NY Style Sauce and Veggie Pizza";
             Dough = "Thin Crust Dough";
-            Sauce = "Marinara Sauce";
+            Sauce = "Teste Sauce";
             Size = 5;
             Toppings = new List<string>();
 
