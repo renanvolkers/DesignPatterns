@@ -11,7 +11,7 @@ namespace AbstractFactory.Example_1.Domain.Entities
             Dough = "Extra Thick Crust Dough";
             Sauce = "Plum tomato Sauce";
             Size = 5;
-
+            Toppings = new List<string>();
             Toppings.Add("Shredded Mozzarella Cheese");
         }
 
