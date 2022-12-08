@@ -14,10 +14,10 @@ namespace AbstractFactory.Example_1.Extensions
 
         public static IDictionary<string, string[]> AsDictionary(this List<ValidationFailure> erros)
         {
-            var dict = new Dictionary<string, string[]>();
+            var dictionary = new Dictionary<string, string[]>();
             dict.Add("Errors", erros.Select(x => x.ToString()).ToArray());
 
-            return dict;
+            return dictionary;
         }
     }
 }
