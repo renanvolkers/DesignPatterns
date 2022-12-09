@@ -8,6 +8,7 @@
 * .NET 7 
 * Minimal API
 * Entity Framework
+* FluenttValidation
 
 
 # DesignPatterns
