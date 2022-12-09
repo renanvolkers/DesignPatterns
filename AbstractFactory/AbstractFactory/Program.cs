@@ -16,7 +16,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers().AddJsonOptions(options =>
            options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
-builder.Services.AddScoped<IValidator<object>, PizzaValidator<object>>();
+builder.Services.AddScoped<IValidator<EmptyPizza>, PizzaValidator<EmptyPizza>>();
 builder.Services.AddSwaggerGen(op =>
 {
     op.SwaggerDoc("v1", new OpenApiInfo
