@@ -1,6 +1,7 @@
 ﻿using AbstractFactory.Example_1.Domain.Entities;
 using AbstractFactory.Example_1.Domain.Interface;
 using AbstractFactory.Example_1.Domain.ValueObj;
+using AbstractFactory.Example_1.Extensions;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,21 +16,17 @@ namespace AbstractFactory.Example_1.EndPoints
                 .Produces(StatusCodes.Status400BadRequest)
                 .WithName("StorePizza")
 
-                .WithOpenApi() ;
+                .WithOpenApi();
 
-    //        app.MapPost("/StorePizza/{city}/{typePizza}", Create).AddFilter(async (routeHandlerInvocationContext, next) =>
-    //        {
-    //            var name = (string)routeHandlerInvocationContext.Parameters[0];
-				//var pizza = (IPizza)routeHandlerInvocationContext.Parameters[1];
-    //            if (name == "Bob")
-    //            {
-    //                return Results.Problem("No Bob's allowed");
-    //            }
-    //            return await next(routeHandlerInvocationContext);
-    //        }).ProducesValidationProblem();
+            app.MapPost("/createPiza/", Create).AddEndpointFilter<ValidationFilter<ChicagoStyleCheesePizza>>()
+                .ProducesValidationProblem()
+                .Produces(StatusCodes.Status400BadRequest)
+                .WithName("createPiza")
+
+                .WithOpenApi();
         }
 
-        public static IResult Get(IValidator<IPizza> validator ,[FromQuery] City city, [FromQuery] TypePizza typePizza)
+        public static IResult Get(IValidator<ChicagoStyleCheesePizza> validator, [FromQuery] City city, [FromQuery] TypePizza typePizza)
         {
             DependentPizzaStore main = new DependentPizzaStore();
 
@@ -39,10 +36,10 @@ namespace AbstractFactory.Example_1.EndPoints
                                   : Results.NotFound();
         }
 
-        public static  IResult Create(IPizza pizza,IValidator<IPizza> validator)
+        public static  IResult Create(ChicagoStyleCheesePizza pizza1,IValidator<ChicagoStyleCheesePizza> validator)
         {
             DependentPizzaStore main = new DependentPizzaStore();
-            
+            IPizza pizza = null;
 
             return pizza is IPizza ? Results.Ok(pizza.StatusDescription)
                                   : Results.NotFound();
