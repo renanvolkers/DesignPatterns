@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Exemple_2\Factories\" />
+    <Folder Include="Exemple_2\Domain\" />
   </ItemGroup>
 
 </Project>
