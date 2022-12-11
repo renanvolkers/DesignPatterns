@@ -47,6 +47,7 @@ app.UseHttpsRedirection();
 
 
 app.MapPizzaEndPoints();
+app.MapExemple2EndPoints();
 
 
 app.Run();
