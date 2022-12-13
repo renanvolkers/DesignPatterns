@@ -31,6 +31,9 @@ namespace AbstractFactory.Example_1.EndPoints
             DependentPizzaStore main = new DependentPizzaStore();
 
             var pizza = main.CreatePizza(city, typePizza);
+           var isValid =  validator.Validate((ChicagoStyleCheesePizza)pizza);
+            validator.Validate()
+            validator.
 
             return pizza is IPizza ? Results.Ok(pizza.StatusDescription)
                                   : Results.NotFound();
