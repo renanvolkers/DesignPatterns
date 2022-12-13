@@ -7,7 +7,7 @@ namespace AbstractFactory.Example_1.Domain.Entities
 {
     public class DependentPizzaStore
     {
-        public IPizza? CreatePizza(City city, TypePizza typePizza)
+        public IPizza CreatePizza(City city, TypePizza typePizza)
         {
             IPizza? pizza = null;
             PizzaStoreAbstractFactory factory;
