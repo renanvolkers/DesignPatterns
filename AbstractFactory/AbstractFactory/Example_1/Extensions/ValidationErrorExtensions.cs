@@ -15,7 +15,7 @@ namespace AbstractFactory.Example_1.Extensions
         public static IDictionary<string, string[]> AsDictionary(this List<ValidationFailure> erros)
         {
             var dictionary = new Dictionary<string, string[]>();
-            dict.Add("Errors", erros.Select(x => x.ToString()).ToArray());
+            dictionary.Add("Errors", erros.Select(x => x.ToString()).ToArray());
 
             return dictionary;
         }
