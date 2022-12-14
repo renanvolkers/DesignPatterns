@@ -1,9 +1,7 @@
 using AbstractFactory.Example_1.Domain.Entities;
-using AbstractFactory.Example_1.Domain.Interface;
 using AbstractFactory.Example_1.EndPoints;
 using AbstractFactory.Example_1.Validators;
 using FluentValidation;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
 
@@ -16,7 +14,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers().AddJsonOptions(options =>
            options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
-//builder.Services.AddScoped<IValidator<EmptyPizza>, PizzaValidator<EmptyPizza>>();
+builder.Services.AddScoped<IValidator<EmptyPizza>, PizzaValidator<EmptyPizza>>();
+
 builder.Services.AddSwaggerGen(op =>
 {
     op.SwaggerDoc("v1", new OpenApiInfo
@@ -47,7 +46,7 @@ app.UseHttpsRedirection();
 
 
 app.MapPizzaEndPoints();
-app.MapExemple2EndPoints();
+//app.MapExemple2EndPoints();
 
 
 app.Run();
