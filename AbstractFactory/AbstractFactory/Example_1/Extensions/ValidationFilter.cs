@@ -10,7 +10,7 @@ namespace AbstractFactory.Example_1.Extensions
             _validator = validator;
         }
 
-        public async ValueTask<object?> InvokeAsync(EndpointFilterInvocationContext context,
+        public async ValueTask<object> InvokeAsync(EndpointFilterInvocationContext context,
                       EndpointFilterDelegate next)
         {
             var parameter = context.Arguments.SingleOrDefault(p => p.GetType() == typeof(T));
