@@ -11,14 +11,15 @@ namespace AbstractFactory.Example_1.EndPoints
     {
         public static void MapPizzaEndPoints(this WebApplication app)
         {
-            app.MapGet("/StorePizza/{city}/{typePizza}", Get)
-                .ProducesValidationProblem()
-                .Produces(StatusCodes.Status400BadRequest)
-                .WithName("StorePizza")
+            //app.MapGet("/StorePizza/{city}/{typePizza}", Get)
+            //    .ProducesValidationProblem()
+            //    .Produces(StatusCodes.Status400BadRequest)
+            //    .WithName("StorePizza")
 
-                .WithOpenApi();
+            //    .WithOpenApi();
 
-            app.MapPost("/createPiza/", Create).AddEndpointFilter<ValidationFilter<ChicagoStyleCheesePizza>>()
+            app.MapPost("/createPiza/", Create)
+                .AddEndpointFilter<ValidationFilter<EmptyPizza>>()
                 .ProducesValidationProblem()
                 .Produces(StatusCodes.Status400BadRequest)
                 .WithName("createPiza")
@@ -26,20 +27,17 @@ namespace AbstractFactory.Example_1.EndPoints
                 .WithOpenApi();
         }
 
-        public static IResult Get(IValidator<ChicagoStyleCheesePizza> validator, [FromQuery] City city, [FromQuery] TypePizza typePizza)
+        public static IResult Get([FromQuery] City city, [FromQuery] TypePizza typePizza)
         {
             DependentPizzaStore main = new DependentPizzaStore();
 
             var pizza = main.CreatePizza(city, typePizza);
-           var isValid =  validator.Validate((ChicagoStyleCheesePizza)pizza);
-            validator.Validate()
-            validator.
 
             return pizza is IPizza ? Results.Ok(pizza.StatusDescription)
                                   : Results.NotFound();
         }
 
-        public static  IResult Create(ChicagoStyleCheesePizza pizza1,IValidator<ChicagoStyleCheesePizza> validator)
+        public static  IResult Create(EmptyPizza pizza1)
         {
             DependentPizzaStore main = new DependentPizzaStore();
             IPizza pizza = null;
