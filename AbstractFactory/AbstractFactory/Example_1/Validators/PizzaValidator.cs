@@ -1,9 +1,10 @@
-﻿using AbstractFactory.Example_1.Domain.Interface;
+﻿using AbstractFactory.Example_1.Domain.Entities;
+using AbstractFactory.Example_1.Domain.Interface;
 using FluentValidation;
 
 namespace AbstractFactory.Example_1.Validators
 {
-    public class PizzaValidator<T> : AbstractValidator<IPizza>
+    public class PizzaValidator<T> : AbstractValidator<EmptyPizza>
     {
         public PizzaValidator()
         {
