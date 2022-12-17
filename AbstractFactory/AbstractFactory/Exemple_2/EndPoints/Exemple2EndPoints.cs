@@ -21,7 +21,7 @@ namespace AbstractFactory.Example_1.EndPoints
 
         }
 
-        public static IResult Get(IValidator<ChicagoStyleCheesePizza> validator, [FromQuery] City city, [FromQuery] TypePizza typePizza)
+        public static IResult Get(IValidator<EmptyPizza> validator, [FromQuery] City city, [FromQuery] TypePizza typePizza)
         {
             DependentPizzaStore main = new DependentPizzaStore();
 
