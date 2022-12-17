@@ -21,7 +21,7 @@ namespace AbstractFactory.Example_1.Extensions
 
             if (!result.IsValid)
             {
-                return Results.ValidationProblem(result.Errors.AsDictionary());
+                return Results.ValidationProblem(result.ToDictionary());
             }
             // now the actual endpoint execution
             return await next(context);
