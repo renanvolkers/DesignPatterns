@@ -13,6 +13,10 @@ namespace AbstractFactory.Exemple_2
             modelBuilder.Entity<Product>()
                 .HasKey(p => p.Id);
 
+            modelBuilder.Entity<Product>()
+                 .Property(p => p.Name)
+                 .IsRequired();
+
         }
     }
 }
