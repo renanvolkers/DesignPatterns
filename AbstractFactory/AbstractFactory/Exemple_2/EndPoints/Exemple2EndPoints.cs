@@ -11,7 +11,7 @@ namespace AbstractFactory.Example_1.EndPoints
     {
         public static void MapExemple2EndPoints(this WebApplication app)
         {
-            app.MapGet("/StorePizza/{city}/{typePizza}", Get)
+            app.MapGet("/StorePizza/{city}/{typePizza} ", Get)
                 .ProducesValidationProblem()
                 .Produces(StatusCodes.Status400BadRequest)
                 .WithName("StorePizza")
