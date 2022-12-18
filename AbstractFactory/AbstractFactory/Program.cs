@@ -1,7 +1,9 @@
 using AbstractFactory.Example_1.Domain.Entities;
 using AbstractFactory.Example_1.EndPoints;
 using AbstractFactory.Example_1.Validators;
+using AbstractFactory.Exemple_2;
 using FluentValidation;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
 
@@ -13,6 +15,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers().AddJsonOptions(options =>
            options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+
+builder.Services.AddDbContext<MinimalContextDb>(options =>
+    options
+    .UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+    );
 
 builder.Services.AddScoped<IValidator<EmptyPizza>, PizzaValidator<EmptyPizza>>();
 
