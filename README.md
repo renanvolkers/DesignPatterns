@@ -4,6 +4,7 @@
 
 ![Coverage](https://github.com/renanvolkers/DesignPatterns/main/coverage_badge.svg?sanitize=true)
 
+
 # Main Stacks
 * .NET 7 
 * Minimal API
