@@ -17,6 +17,21 @@ namespace AbstractFactory.Exemple_2
                  .Property(p => p.Name)
                  .IsRequired();
 
+              modelBuilder.Entity<Product>()
+                 .Property(p => p.Size)
+                 .IsRequired();
+
+modelBuilder.Entity<Product>()
+                 .Property(p => p.Size)
+                 .IsRequired();
+modelBuilder.Entity<Product>()
+                 .Property(p => p.Size)
+                 .IsRequired();
+
+
+
+
+
         }
     }
 }
