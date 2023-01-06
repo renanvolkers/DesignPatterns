@@ -2,8 +2,10 @@
 using AbstractFactory.Example_1.Domain.Interface;
 using AbstractFactory.Example_1.Domain.ValueObj;
 using AbstractFactory.Example_1.Extensions;
+using AbstractFactory.Exemple_2.Domain;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace AbstractFactory.Example_1.EndPoints
 {
@@ -11,12 +13,12 @@ namespace AbstractFactory.Example_1.EndPoints
     {
         public static void MapPizzaEndPoints(this WebApplication app)
         {
-            //app.MapGet("/StorePizza/{city}/{typePizza}", Get)
-            //    .ProducesValidationProblem()
-            //    .Produces(StatusCodes.Status400BadRequest)
-            //    .WithName("StorePizza")
+            app.MapGet("/StorePizza/{city}/{typePizza}", Get)
+                .ProducesValidationProblem()
+                .Produces(StatusCodes.Status400BadRequest)
+                .WithName("StorePizza")
 
-            //    .WithOpenApi();
+                .WithOpenApi();
 
             app.MapPost("/createPiza/", Create)
                 .AddEndpointFilter<ValidationFilter<EmptyPizza>>()
@@ -27,23 +29,26 @@ namespace AbstractFactory.Example_1.EndPoints
                 .WithOpenApi();
         }
 
-        public static IResult Get([FromQuery] City city, [FromQuery] TypePizza typePizza)
+        public static async Task<IResult> Get(ContextDataBase context, [FromQuery] City city, [FromQuery] TypePizza typePizza)
         {
             DependentPizzaStore main = new DependentPizzaStore();
 
-            var pizza = main.CreatePizza(city, typePizza);
+            var pizza = await context.Get(x => x.Name != null).FirstOrDefaultAsync();
 
-            return pizza is IPizza ? Results.Ok(pizza.StatusDescription)
+            return pizza is Product ? Results.Ok(pizza)
                                   : Results.NotFound();
         }
 
-        public static  IResult Create(EmptyPizza pizza1)
+        public static  async Task<IResult> Create(ContextDataBase context, EmptyPizza pizza1)
         {
             DependentPizzaStore main = new DependentPizzaStore();
-            IPizza pizza = null;
+            IPizza pizza = new NYStyleCheesePizza();
 
-            return pizza is IPizza ? Results.Ok(pizza.StatusDescription)
-                                  : Results.NotFound();
+            //await context.AddAsync(new Product { Name="Renan Alpoim Volkers"});
+            //await context.SaveChangesAsync();
+
+            return pizza is IPizza ? Results.Created("teste",pizza)
+                                  : Results.BadRequest();
         }
 
     }
