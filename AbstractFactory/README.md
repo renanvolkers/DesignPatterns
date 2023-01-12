@@ -17,3 +17,6 @@ Use exemplar really today for testing code.
 
 
 
+# Exemple 2 
+Context command interface provides access to all non CRUD database operations.
+Using two Context Entity Framework and MongoDb
