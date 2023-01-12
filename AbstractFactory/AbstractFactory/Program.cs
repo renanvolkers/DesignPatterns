@@ -1,7 +1,9 @@
+using AbstractFactory;
 using AbstractFactory.Example_1.Domain.Entities;
 using AbstractFactory.Example_1.EndPoints;
 using AbstractFactory.Example_1.Validators;
-using AbstractFactory.Exemple_2;
+using AbstractFactory.Exemple_2.Domain;
+using AbstractFactory.Exemple_2.Factories;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -16,12 +18,17 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers().AddJsonOptions(options =>
            options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
-builder.Services.AddDbContext<MinimalContextDb>(options =>
-    options
-    .UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
-    );
+//builder.Services.AddIdentityEntityFrameworkContextConfiguration(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+//    b => b.MigrationsAssembly("MinimalPilot")));
+
+
 
 builder.Services.AddScoped<IValidator<EmptyPizza>, PizzaValidator<EmptyPizza>>();
+
+//builder.Services.AddDbContext<MinimalContextDb>(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IApplicationDB>(x=>new ApplicationDB(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddSwaggerGen(op =>
 {
@@ -50,10 +57,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 
-
-
 app.MapPizzaEndPoints();
-app.MapExemple2EndPoints();
+//app.MapExemple2EndPoints();
 
 
 app.Run();
