@@ -9,7 +9,7 @@ namespace AbstractFactory.Example_1.Domain.Entities
     {
         public IPizza CreatePizza(City city, TypePizza typePizza)
         {
-            IPizza? pizza = null;
+            IPizza? pizza = new EmptyPizza();
             PizzaStoreAbstractFactory factory;
 
             if (City.NY.Equals(city))
