@@ -1,5 +1,6 @@
 ﻿using AbstractFactory.Exemple_2.Domain;
 using AbstractFactory.Exemple_2.Factories.AbstracFactory;
+using AbstractFactory.Exemple_2.Factories.Products;
 
 namespace AbstractFactory.Exemple_2.Factories
 {
@@ -7,7 +8,7 @@ namespace AbstractFactory.Exemple_2.Factories
     {
         public override ContextDataBase CreateDbContext()
         {
-            throw new NotImplementedException();
+            return new ContextSqlEE();
         }
     }
 }
