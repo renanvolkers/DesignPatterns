@@ -16,7 +16,7 @@ namespace AbstractFactory.StorePizza
             {
                 return new ChicagoStyleCheesePizza();
             }
-            else return new EmptyPizza();
+            else return null;
         }
     }   
 }

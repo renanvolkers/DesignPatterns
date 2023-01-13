@@ -18,12 +18,17 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers().AddJsonOptions(options =>
            options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
+//builder.Services.AddIdentityEntityFrameworkContextConfiguration(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+//    b => b.MigrationsAssembly("MinimalPilot")));
+
+
 
 builder.Services.AddScoped<IValidator<EmptyPizza>, PizzaValidator<EmptyPizza>>();
 
-builder.Services.AddDbContext<MinimalContextDb>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddScoped<IApplicationDB>(x => new ApplicationDB(builder.Configuration.GetConnectionString("DefaultConnection")));
+//builder.Services.AddDbContext<MinimalContextDb>(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IApplicationDB>(x=>new ApplicationDB(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddSwaggerGen(op =>
 {
@@ -40,7 +45,7 @@ builder.Services.AddSwaggerGen(op =>
 
         }
     });
-
+    
 });
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
