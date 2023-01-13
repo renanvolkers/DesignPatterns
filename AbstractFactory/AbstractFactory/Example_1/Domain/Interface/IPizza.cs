@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using AbstractFactory.Example_1.Domain.ValueObj;
+using System.Text;
 
 namespace AbstractFactory.Example_1.Domain.Interface
 {
@@ -10,6 +11,9 @@ namespace AbstractFactory.Example_1.Domain.Interface
         public string? Sauce { get; set; }
         public int Size { get; set; }
         public string? StatusDescription { get; set; }
+
+        public City City { get; set; }
+        public TypePizza type{ get; set; }
 
         public List<string> Toppings { get; set; }
 
