@@ -14,7 +14,7 @@
 # Abstract Factory
 Is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.
 
-# Exemple 1 
+# Example 1 
 For example, in a pizza store, you may want to use the Abstract Factory pattern to create different types of pizzas. The factory would have a method for creating a pizza, and depending on the type of pizza you want to create, it will return an object of the appropriate class.
 
 The Abstract Factory pattern would consist of two main parts: the factory interface and the concrete factories. The factory interface would define the method for creating a pizza, and the concrete factories would implement this method.
@@ -27,9 +27,9 @@ In this way, the pizzastore can create different types of pizzas without having 
 ![image](https://user-images.githubusercontent.com/5272594/212394401-462cbd0f-98a2-4279-9365-a1b8be912808.png)
 
 
-# Exemple 2 
-Context command interface provides access to all non CRUD database operations.
-Using two Context Entity Framework and MongoDb
+# Example 2 
+Here's an example of how the abstract factory pattern could be used to create a database and context, command interface provides access to all non CRUD database operations. Using two Context Entity Framework and MongoDb
+
 
 UML Exemple 2
 ![image](https://user-images.githubusercontent.com/5272594/212362046-999926ff-6d68-4e2b-be77-b66099b474c6.png)
