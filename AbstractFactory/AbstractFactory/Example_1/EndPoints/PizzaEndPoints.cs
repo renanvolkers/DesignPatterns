@@ -11,6 +11,7 @@ namespace AbstractFactory.Example_1.EndPoints
 {
     public static class  PizzaEndPoints
     {
+        public static List<IPizza> pizzas { get; set; } = new List<IPizza>();
         public static void MapPizzaEndPoints(this WebApplication app)
         {
             app.MapGet("/StorePizza/{city}/{typePizza}", Get)
@@ -21,7 +22,6 @@ namespace AbstractFactory.Example_1.EndPoints
                 .WithOpenApi();
 
             app.MapPost("/createPiza/", Create)
-                .AddEndpointFilter<ValidationFilter<EmptyPizza>>()
                 .ProducesValidationProblem()
                 .Produces(StatusCodes.Status400BadRequest)
                 .WithName("createPiza")
@@ -29,25 +29,20 @@ namespace AbstractFactory.Example_1.EndPoints
                 .WithOpenApi();
         }
 
-        public static async Task<IResult> Get(ContextDataBase context, [FromQuery] City city, [FromQuery] TypePizza typePizza)
+        public static  IResult Get([FromQuery] City city, [FromQuery] TypePizza typePizza)
         {
-            DependentPizzaStore main = new DependentPizzaStore();
+            pizzas = pizzas.Where(x=>x.City == city && x.type == typePizza).ToList();
 
-            var pizza = await context.Get(x => x.Name != null).FirstOrDefaultAsync();
-
-            return pizza is Product ? Results.Ok(pizza)
+            return pizzas is List<IPizza> ? Results.Ok(pizzas)
                                   : Results.NotFound();
         }
 
-        public static  async Task<IResult> Create(ContextDataBase context, EmptyPizza pizza1)
+        public static  async Task<IResult> Create([FromQuery] City city , [FromQuery] TypePizza typePizza)
         {
             DependentPizzaStore main = new DependentPizzaStore();
-            IPizza pizza = new NYStyleCheesePizza();
-
-            //await context.AddAsync(new Product { Name="Renan Alpoim Volkers"});
-            //await context.SaveChangesAsync();
-
-            return pizza is IPizza ? Results.Created("teste",pizza)
+            IPizza pizza = main.CreatePizza(city,typePizza);
+            pizzas.Add(pizza);
+            return pizza is IPizza ? Results.Created("teste", pizzas)
                                   : Results.BadRequest();
         }
 
