@@ -34,3 +34,10 @@ Here's an example of how the abstract factory pattern could be used to create a 
 UML Exemple 2
 ![image](https://user-images.githubusercontent.com/5272594/212362046-999926ff-6d68-4e2b-be77-b66099b474c6.png)
 
+Configuration Program EntityFramework
+//builder.Services.AddIdentityEntityFrameworkContextConfiguration(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+//    b => b.MigrationsAssembly("MinimalPilot")));
+
+
+
