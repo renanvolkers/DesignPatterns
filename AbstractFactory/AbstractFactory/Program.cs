@@ -18,16 +18,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers().AddJsonOptions(options =>
            options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
-//builder.Services.AddIdentityEntityFrameworkContextConfiguration(options =>
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
-//    b => b.MigrationsAssembly("MinimalPilot")));
+
 
 
 
 builder.Services.AddScoped<IValidator<EmptyPizza>, PizzaValidator<EmptyPizza>>();
 
-//builder.Services.AddDbContext<MinimalContextDb>(options =>
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<MinimalContextDb>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IApplicationDB>(x=>new ApplicationDB(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddSwaggerGen(op =>
@@ -58,7 +56,7 @@ app.UseHttpsRedirection();
 
 
 app.MapPizzaEndPoints();
-//app.MapExemple2EndPoints();
+app.MapProductExemplo2();
 
 
 app.Run();
