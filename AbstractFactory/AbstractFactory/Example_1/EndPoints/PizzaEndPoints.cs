@@ -14,18 +14,16 @@ namespace AbstractFactory.Example_1.EndPoints
         public static List<IPizza> pizzas { get; set; } = new List<IPizza>();
         public static void MapPizzaEndPoints(this WebApplication app)
         {
-            app.MapGet("/StorePizza/{city}/{typePizza}", Get)
+            app.MapGet("/storePizza/{city}/{typePizza}", Get)
                 .ProducesValidationProblem()
                 .Produces(StatusCodes.Status400BadRequest)
                 .WithName("StorePizza")
-
                 .WithOpenApi();
 
-            app.MapPost("/createPiza/", Create)
+            app.MapPost("/createPizza/", Create)
                 .ProducesValidationProblem()
                 .Produces(StatusCodes.Status400BadRequest)
-                .WithName("createPiza")
-
+                .WithName("createPizza")
                 .WithOpenApi();
         }
 
@@ -42,7 +40,7 @@ namespace AbstractFactory.Example_1.EndPoints
             DependentPizzaStore main = new DependentPizzaStore();
             IPizza pizza = main.CreatePizza(city,typePizza);
             pizzas.Add(pizza);
-            return pizza is IPizza ? Results.Created("teste", pizzas)
+            return pizza is IPizza ? Results.Created("teste", pizza)
                                   : Results.BadRequest();
         }
 
