@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <Folder Include="Example\Domain\" />
+    <Folder Include="Example\EndPoint\" />
   </ItemGroup>
 
 </Project>
