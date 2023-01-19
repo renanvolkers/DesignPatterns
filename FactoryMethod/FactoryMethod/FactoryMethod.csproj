@@ -17,6 +17,7 @@
   <ItemGroup>
     <Folder Include="Example\Domain\" />
     <Folder Include="Example\EndPoint\" />
+    <Folder Include="Example\Extensions\" />
     <Folder Include="Example\Validations\" />
   </ItemGroup>
 
