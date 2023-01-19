@@ -15,12 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Example\Domain\Entities\" />
-    <Folder Include="Example\Domain\Interface\" />
-    <Folder Include="Example\Domain\ValeuObj\" />
-    <Folder Include="Example\EndPoint\" />
-    <Folder Include="Example\Extensions\" />
-    <Folder Include="Example\Validations\" />
+    <Folder Include="Translator\Domain\Entities\" />
+    <Folder Include="Translator\Domain\Interface\" />
+    <Folder Include="Translator\Domain\ValeuObj\" />
+    <Folder Include="Translator\EndPoint\" />
+    <Folder Include="Translator\Validations\" />
   </ItemGroup>
 
 </Project>
