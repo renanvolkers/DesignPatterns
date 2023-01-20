@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Translator\Domain\ValeuObj\" />
     <Folder Include="Translator\EndPoint\" />
     <Folder Include="Translator\Validations\" />
   </ItemGroup>
