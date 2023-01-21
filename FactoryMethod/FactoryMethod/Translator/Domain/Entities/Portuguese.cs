@@ -2,5 +2,10 @@
 {
     public class Portuguese
     {
+        public int Id { get; set; }
+        public PossessiveAdjective PossessiveAdjective { get; set; }
+        public PromonounsObject PromonounsObject { get; set; }
+
+
     }
 }
