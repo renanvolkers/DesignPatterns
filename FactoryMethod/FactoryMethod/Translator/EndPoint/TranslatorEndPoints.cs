@@ -13,7 +13,7 @@ namespace AbstractFactory.Example_1.EndPoints
             app.MapGet("/TypeText/{typeLanguage}/", Get)
                 .ProducesValidationProblem()
                 .Produces(StatusCodes.Status400BadRequest)
-                .WithName("StorePizza")
+                .WithName("TextCommom")
                 .WithOpenApi();
 
 
