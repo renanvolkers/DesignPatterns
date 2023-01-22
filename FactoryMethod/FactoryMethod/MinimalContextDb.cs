@@ -1,5 +1,4 @@
-﻿using AbstractFactory.Exemple_2.Domain;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace FactoryMethod
 {
