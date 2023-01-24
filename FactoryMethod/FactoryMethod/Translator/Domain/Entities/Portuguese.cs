@@ -1,6 +1,6 @@
 ﻿namespace FactoryMethod.Translator.Domain.Entities
 {
-    public class Portuguese
+    public class Portuguese: ILanguage
     {
         public int Id { get; set; }
         public PossessiveAdjective PossessiveAdjective { get; set; }
