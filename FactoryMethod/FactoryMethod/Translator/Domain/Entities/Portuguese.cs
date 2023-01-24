@@ -1,4 +1,6 @@
-﻿namespace FactoryMethod.Translator.Domain.Entities
+﻿using FactoryMethod.Translator.Domain.Interface;
+
+namespace FactoryMethod.Translator.Domain.Entities
 {
     public class Portuguese: ILanguage
     {

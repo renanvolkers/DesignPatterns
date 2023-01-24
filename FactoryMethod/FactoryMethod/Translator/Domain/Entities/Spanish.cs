@@ -1,6 +1,8 @@
-﻿namespace FactoryMethod.Translator.Domain.Entities
+﻿using FactoryMethod.Translator.Domain.Interface;
+
+namespace FactoryMethod.Translator.Domain.Entities
 {
-    public class Spanish
+    public class Spanish : ILanguage
     {
         public int Id { get; set; }
         public PossessiveAdjective? PossessiveAdjective { get; set; }
