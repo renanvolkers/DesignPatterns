@@ -26,6 +26,23 @@ namespace FactoryMethod
             modelBuilder.Entity<PossessiveAdjective>()
                 .ToTable("PossessiveAdjective");
 
+            modelBuilder.Entity<Word>()
+                .HasKey(p => p.Id);
+
+
+
+            modelBuilder.Entity<Word>()
+                 .Property(p => p.Name)
+                 .IsRequired();
+
+            modelBuilder.Entity<Word>()
+                 .Property(p => p.Type)
+                 .IsRequired();
+
+
+            modelBuilder.Entity<Word>()
+                .ToTable("Word");
+
 
             base.OnModelCreating(modelBuilder);
 
