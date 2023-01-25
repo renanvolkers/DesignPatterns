@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FactoryMethod.Translator.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace FactoryMethod
 {
@@ -8,21 +9,24 @@ namespace FactoryMethod
         public MinimalContextDb(DbContextOptions<MinimalContextDb> options) : base(options) { }
 
 
-        public DbSet<Product> Products { get; set; }
+        public DbSet<PossessiveAdjective> PossessiveAdjectives { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<Product>()
+            modelBuilder.Entity<PossessiveAdjective>()
                 .HasKey(p => p.Id);
 
 
-            modelBuilder.Entity<Product>()
-                 .Property(p => p.Name)
+
+            modelBuilder.Entity<PossessiveAdjective>()
+                 .Property(p => p.WordId)
                  .IsRequired();
 
-            modelBuilder.Entity<Product>()
-                .ToTable("Product");
+            modelBuilder.Entity<PossessiveAdjective>()
+                .ToTable("PossessiveAdjective");
+
+
             base.OnModelCreating(modelBuilder);
 
         }
