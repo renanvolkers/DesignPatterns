@@ -15,6 +15,6 @@
 # Factory Method
 Is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.
 
-# Example 1 
+# Example Translate
 For example, in a Language Grammar, you may want to use the Factory Method pattern to create different types of Laguage. The factory would have a method for creating a Grammar, and depending on the type of Grammar you want to create, it will return an object of the appropriate class.
 
