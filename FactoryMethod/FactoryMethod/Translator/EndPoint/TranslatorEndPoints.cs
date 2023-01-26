@@ -16,6 +16,12 @@ namespace AbstractFactory.Example_1.EndPoints
                 .WithName("TextCommom")
                 .WithOpenApi();
 
+            app.MapGet("/PossessiveAdjective/{typeLanguage}/", GetPossessiveAdjective)
+                .ProducesValidationProblem()
+                .Produces(StatusCodes.Status400BadRequest)
+                .WithName("PossessiveAdjective")
+                .WithOpenApi();
+
 
         }
 
@@ -27,6 +33,13 @@ namespace AbstractFactory.Example_1.EndPoints
                                   : Results.NotFound();
         }
 
+        public static IResult GetPossessiveAdjective([FromQuery] Language language)
+        {
+            languages = languages.ToList();
+
+            return languages is List<ILanguage> ? Results.Ok(languages)
+                                  : Results.NotFound();
+        }
 
     }
 }
