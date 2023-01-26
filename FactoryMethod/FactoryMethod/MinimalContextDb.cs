@@ -44,6 +44,25 @@ namespace FactoryMethod
                 .ToTable("Word");
 
 
+
+            modelBuilder.Entity<Word>()
+                .HasKey(p => p.Id);
+
+
+
+            modelBuilder.Entity<PromonounsObject>()
+                 .Property(p => p.Id)
+                 .IsRequired();
+
+            modelBuilder.Entity<PromonounsObject>()
+                 .Property(p => p.WordId)
+                 .IsRequired();
+
+
+            modelBuilder.Entity<PromonounsObject>()
+                .ToTable("PromonounsObject");
+
+
             base.OnModelCreating(modelBuilder);
 
         }
