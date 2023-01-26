@@ -1,3 +1,5 @@
+using AbstractFactory.Example_1.EndPoints;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,7 +18,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapPizzaEndPoints();
+app.MapLanguageEndPoints();
 
 app.Run();
 
