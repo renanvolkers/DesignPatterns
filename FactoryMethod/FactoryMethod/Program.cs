@@ -19,6 +19,7 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 
 
 
+builder.Services.AddScoped<IValidator<Gramatic>, GramaticValidator<Gramatic>>();
 
 builder.Services.AddDbContext<MinimalContextDb>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
