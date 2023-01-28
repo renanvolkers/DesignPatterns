@@ -9,6 +9,7 @@ namespace FactoryMethod.Translator.Validators
         {
             RuleFor(o=> o.PossessiveAdjective).NotEmpty().NotNull();
             RuleFor(o => o.PromonounsObject).NotNull();
+            RuleFor(o => o.Id).NotNull();
         }
     }
 
