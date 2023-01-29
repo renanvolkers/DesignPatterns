@@ -8,9 +8,6 @@ namespace FactoryMethod
         //The model is discovered by running a set of conventions over the entity classes found in the
         public MinimalContextDb(DbContextOptions<MinimalContextDb> options) : base(options) { }
 
-
-        public DbSet<PossessiveAdjective> PossessiveAdjectives { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
