@@ -13,7 +13,7 @@
 
 
 # Factory Method
-Is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.
+The Factory Method design pattern defines an interface for creating an object, but let subclasses decide which class to instantiate. This pattern lets a class defer instantiation to subclasses.
 
 # Example Translate
 For example, in a Language Grammar, you may want to use the Factory Method pattern to create different types of Laguage. The factory would have a method for creating a Grammar, and depending on the type of Grammar you want to create, it will return an object of the appropriate class.
