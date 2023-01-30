@@ -1,9 +1,7 @@
-using AbstractFactory.Example_1.EndPoints;
-using FactoryMethod;
-using FactoryMethod.Translator.Domain.Entities;
-using FactoryMethod.Translator.Validators;
+using FactoryMethod.Example_1.EndPoints;
+using FactoryMethod.ServiceMessage.Domain.Interface;
+using FactoryMethod.ServiceMessage.Validators;
 using FluentValidation;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
 
@@ -15,22 +13,16 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers().AddJsonOptions(options =>
            options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
+builder.Services.AddScoped<IValidator<Channel>, ChannelValidator<Channel>>();
 
-
-
-
-builder.Services.AddScoped<IValidator<Gramatic>, GramaticValidator<Gramatic>>();
-
-builder.Services.AddDbContext<MinimalContextDb>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddSwaggerGen(op =>
 {
     op.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "Delivery Pizza",
+        Title = "Comunication Channel",
         Version = "version",
-        Description = "The Goal project is show the use pattern Abstract Factory",
+        Description = "The Goal project is show the use pattern Factory Method",
         Contact = new OpenApiContact
         {
             Name = "Renan Alpoim Volkers",
@@ -49,7 +41,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.MapLanguageEndPoints();
+app.MapChannelEndPoints();
 
 app.Run();
 
