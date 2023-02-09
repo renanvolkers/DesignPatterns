@@ -4,7 +4,9 @@
     {
         public void constructProduct1(Builder builder)
         {
+            builder.Reset();
             builder.BuildStepA();
+            builder.BuildStepB();
         }
 
     }
