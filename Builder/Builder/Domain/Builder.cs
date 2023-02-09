@@ -4,7 +4,7 @@
     {
         public int Reset();
         public void BuildStepA();
-public void BuildStepB();
+        public void BuildStepB();
 
     }
 }
