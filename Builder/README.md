@@ -8,7 +8,6 @@
 # Main Stacks
 * .NET 7 
 * Minimal API
-* Entity Framework
 
 
 # Builder
