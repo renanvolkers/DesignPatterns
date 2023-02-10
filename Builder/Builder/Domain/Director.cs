@@ -2,7 +2,7 @@
 {
     public class Director
     {
-        public void constructProduct1(Builder builder)
+        public void ConstructProduct1(Builder builder)
         {
             builder.Reset();
             builder.BuildStepA();
