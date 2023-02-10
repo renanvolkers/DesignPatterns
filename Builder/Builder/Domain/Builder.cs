@@ -2,7 +2,7 @@
 {
     public interface Builder
     {
-        public int Reset();
+        public void Reset();
         public void BuildStepA();
         public void BuildStepB();
 
