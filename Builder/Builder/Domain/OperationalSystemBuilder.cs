@@ -1,57 +1,82 @@
 ﻿namespace Builder.Domain
 {
-    public class OperationalSystemBuilder : Builder
+    public class OperationalSystemBuilder : IBuilder
     {
-       public OperationalSystem? OS { get; set; }
+       public OperationalSystem OS { get; set; }
 
-        public OperationalSystemBuilder()
-        {
-            this.Reset();
-        }
+        public OperationalSystemBuilder() => Reset();
 
         public void Reset()
         {
-            throw new NotImplementedException();
+           this.OS = new OperationalSystem();
         }
 
-        public void SetAudio()
+        public void ConfigAudio()
         {
-            throw new NotImplementedException();
+        }
+        public void Name(string name)
+        {
+            this.OS.Name = name;
         }
 
-        public void SetVideo()
+        public void Video()
         {
-            throw new NotImplementedException();
+            this.OS.Video = "Gforce";
         }
 
-        public void SetWirelless()
+        public void ConfigWireless()
         {
-            throw new NotImplementedException();
+            this.OS.Wifi = "Beds";
         }
 
-        public void SetRaw()
+        public void Raw()
         {
-            throw new NotImplementedException();
         }
 
-        public void SetUSB()
+        public void USB()
         {
-            throw new NotImplementedException();
         }
 
-        public void SetMonitor()
+        public void Monitor(string pixel)
         {
-            throw new NotImplementedException();
+            this.OS.Monitor = "LG";
         }
 
-        public void SetProcessor()
+        public void Processor(int fast)
         {
-            throw new NotImplementedException();
+            this.OS.Processador = "Intel";
         }
 
-        public void SetMotherBoard()
+        public void Configuration()
         {
-            throw new NotImplementedException();
+            this.AddPrograms();
+        }
+
+        public void MotherBoard()
+        {
+        }
+        public void AddPrograms()
+        {
+            this.OS.Programs.Add("Officer");
+            this.OS.Programs.Add("Chromer");
+            this.OS.Programs.Add("Visual Studio");
+            this.OS.Programs.Add("Sql Server");
+            this.OS.Programs.Add("Postman");
+        }
+
+        public string Info()
+        {
+            var information = "Consumer Memory" + this.OS.ConsumerMemory() +"\n";
+            information = information + "Processador" + this.OS.Processador + "\n";
+            information = information + "OS" + this.OS.Name + "\n";
+            string programs = string.Join("Programs:", this.OS.Programs);
+            information = information + "\n" + programs;
+            return information;
+        }
+
+        public OperationalSystem GetOS()
+        {
+           return this.OS;
         }
     }
 }
