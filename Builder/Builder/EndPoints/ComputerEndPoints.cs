@@ -1,6 +1,7 @@
 ﻿using Builder.Domain;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace AbstractFactory.EndPoints
 {
@@ -22,36 +23,17 @@ namespace AbstractFactory.EndPoints
                 .WithOpenApi();
         }
 
-        public static async Task<IResult> CreateOs([FromQuery] TypeOS typeOS)
+        public static  IResult CreateOs([FromQuery] TypeOS typeOS)
         {
-            var diretor = new Director();
-            var builder = new OperationalSystemBuilder();
+            var operationalSystem = new Application().MakeOperationalSystem(typeOS);
 
-            if (TypeOS.Windows == typeOS)
-            {
-                diretor.OperationalSystemWindows(builder);
-            }
-
-            if (TypeOS.Linux == typeOS)
-            {
-                diretor.OperationalSystemLinux(builder);
-            }
-            var operationalSystem = builder.GetOS();
             return operationalSystem is OperationalSystem ? Results.Created("teste", operationalSystem)
                                   : Results.BadRequest();
         }
-        public static async Task<IResult> CreateHardware([FromQuery] TypeHardware typeHardware)
+        public static  IResult CreateHardware([FromQuery] TypeHardware typeHardware)
         {
-            var diretor = new Director();
-            var builder = new HardwareBuilder();
-
-            if (TypeHardware.Intel == typeHardware)
-            {
-                diretor.Buildcomputer(builder);
-            }
-
-            var computer = builder.GetNotbook();
-            return computer is Notbook ? Results.Created("teste", computer)
+            var notbook = new Application().MakeNotbook(typeHardware);
+            return notbook is Notbook ? Results.Created("teste", notbook)
                                   : Results.BadRequest();
         }
 
