@@ -13,7 +13,7 @@ namespace Builder.Extensions
         public async ValueTask<object> InvokeAsync(EndpointFilterInvocationContext context,
                       EndpointFilterDelegate next)
         {
-            var parameter = context.Arguments.SingleOrDefault(p => p.GetType() == typeof(T));
+            var parameter = context.Arguments.SingleOrDefault(p => p?.GetType() == typeof(T));
 
             if (parameter is null) return Results.BadRequest("O parametro é inválido/Type.");
 
