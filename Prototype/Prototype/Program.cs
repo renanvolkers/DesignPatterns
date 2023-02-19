@@ -1,3 +1,4 @@
+using AbstractFactory.Example_1.EndPoints;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
 
@@ -36,5 +37,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.Run();
+app.MapProductExemplo2();
 
 
