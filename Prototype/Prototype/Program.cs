@@ -1,5 +1,5 @@
-using AbstractFactory.Example_1.EndPoints;
 using Microsoft.OpenApi.Models;
+using Prototype.EndPoints;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,9 +34,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.MapEmployeeEndPoints();
 app.UseHttpsRedirection();
+
 app.Run();
-app.MapProductExemplo2();
 
 
