@@ -2,6 +2,8 @@
 {
     public class EngineerSoftware : IStaff
     {
+        public int Id { get; set; }
+
         public int WordsPerMinute { get; set; }
         public string? Name { get; set; }
         public string? Role { get; set; }
