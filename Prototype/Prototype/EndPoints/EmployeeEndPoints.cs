@@ -38,6 +38,8 @@ namespace Prototype.EndPoints
                 .Produces(StatusCodes.Status400BadRequest)
                 .WithName("PostTypist")
                 .WithOpenApi();
+
+
         }
 
         public static IResult Get([FromQuery]TypeEmployee typeEmployee)
@@ -45,6 +47,21 @@ namespace Prototype.EndPoints
             var filterStaff = Application.FilterStaff(typeEmployee, staff);
 
             return filterStaff is List<IStaff> ? Results.Ok(filterStaff.Select(x => x.GetDetails()))
+                                  : Results.NotFound();
+        }
+        public static IResult GetEngineerSoftware()
+        {
+            var filterStaff = Application.FilterStaff(TypeEmployee.EngineerSoftware, staff);
+
+            return filterStaff is List<EngineerSoftware> ? Results.Ok(filterStaff.Select(x => x.GetDetails()))
+                                  : Results.NotFound();
+        }
+        
+        public static IResult GetTypist()
+        {
+            var filterStaff = Application.FilterStaff(TypeEmployee.Typist, staff);
+
+            return filterStaff is List<Typist> ? Results.Ok(filterStaff.Select(x => x.GetDetails()))
                                   : Results.NotFound();
         }
         public static IResult DeepClone([FromQuery] TypeEmployee typeEmployee)
