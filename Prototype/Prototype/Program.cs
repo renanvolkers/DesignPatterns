@@ -15,7 +15,7 @@ builder.Services.AddSwaggerGen(op =>
 {
     op.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "Delivery Pizza",
+        Title = "Register Staff",
         Version = "version",
         Description = "The Goal project is show the use pattern Prototype",
         Contact = new OpenApiContact
