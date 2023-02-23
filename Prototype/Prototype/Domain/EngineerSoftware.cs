@@ -1,8 +1,11 @@
-﻿namespace Prototype.Domain
+﻿using System.Text.Json.Serialization;
+
+namespace Prototype.Domain
 {
     public class EngineerSoftware : IStaff
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        [JsonIgnore]
+        public Guid Id { get; set; } 
 
         public int WordsPerMinute { get; set; }
         public string? Name { get; set; }
