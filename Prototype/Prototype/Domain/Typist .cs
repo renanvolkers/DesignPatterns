@@ -9,7 +9,7 @@ namespace Prototype.Domain
         public string? Name { get; set; }
         public string? Role { get; set; }
         public List<Experience> Experiences { get; set; } = new List<Experience>();
-
+        public InfoStaff InfoStaff { get; set; } = new InfoStaff();
 
         public IStaff ShallowClone()
         {
