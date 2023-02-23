@@ -95,19 +95,21 @@ namespace Prototype.EndPoints
             return staffs is List<IStaff> ? Results.Ok(typeEmployee)
                                   : Results.NotFound();
         }
-        public static IResult PutEngineerSoftware(EngineerSoftware typeEmployee)
+        public static IResult PutEngineerSoftware(Guid id,EngineerSoftware typeEmployee)
         {
-            EngineerSoftware staff = (EngineerSoftware)Application.GetById(typeEmployee.Id, staffs);
+            var  staff = (EngineerSoftware) Application.GetById(id, staffs);
             if (staff !=null)
             {
+                staff.Name = typeEmployee.Name;
                 staff.WordsPerMinute = typeEmployee.WordsPerMinute;
                 staff.PreferredLanguage = typeEmployee.PreferredLanguage;
                 staff.MoneyPerHours = typeEmployee.MoneyPerHours;
+                staff.InfoStaff.Phone = typeEmployee.InfoStaff.Phone;
+                staff.InfoStaff.Adress = typeEmployee.InfoStaff.Adress;
                 staff.Experiences = typeEmployee.Experiences;
-                staff.Name = typeEmployee.Name;
             }
 
-            return staff is IStaff ? Results.Ok(typeEmployee)
+            return staff is IStaff ? Results.Ok(staff)
                                   : Results.NotFound();
         }
 
