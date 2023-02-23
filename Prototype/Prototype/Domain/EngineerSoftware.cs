@@ -2,7 +2,7 @@
 {
     public class EngineerSoftware : IStaff
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
 
         public int WordsPerMinute { get; set; }
         public string? Name { get; set; }
@@ -14,7 +14,9 @@
 
         public IStaff ShallowClone()
         {
-            return (IStaff)MemberwiseClone();
+            var staff=(IStaff)MemberwiseClone();
+            staff.Id = Guid.NewGuid();
+            return staff;
 
         }
 
@@ -31,7 +33,7 @@
         public string GetDetails()
         {
           var list =  string.Join("\n", this.Experiences.Select(x=>x.Company));
-            return string.Format("{0} - {1} - {2} - {3}", Name, Role, PreferredLanguage, list);
+            return string.Format("{0} - {1} - {2} - {3}- {4} - {5} - {6}", Id, Name, Role, PreferredLanguage, WordsPerMinute,MoneyPerHours, list);
         }
     }
 
