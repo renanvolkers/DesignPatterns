@@ -16,6 +16,8 @@ namespace Prototype.Domain
             }
             return filterStaff;
         }
+        public static IStaff GetById(Guid id, List<IStaff> staff) => staff.FirstOrDefault(x => x.Id == id);
+
         public static List<IStaff> DeepClone(TypeEmployee typeEmployee, List<IStaff> staff)
         {
             var filterStaff = new List<IStaff>();
@@ -36,25 +38,23 @@ namespace Prototype.Domain
             }
             return filterStaff;
         }
-        public static List<IStaff> ShallowClone(TypeEmployee typeEmployee, List<IStaff> staff)
+        public static void ShallowClone(TypeEmployee typeEmployee, List<IStaff> staff)
         {
-            var filterStaff = new List<IStaff>();
             if (typeEmployee == TypeEmployee.EngineerSoftware)
             {
                 staff.Where(x => x.GetType() == typeof(EngineerSoftware)).ToList()
                     .ForEach(x => {
-                        filterStaff.Add(x.ShallowClone());
+                        staff.Add(x.ShallowClone());
                     });
             }
             if (typeEmployee == TypeEmployee.Typist)
             {
                 staff.Where(x => x.GetType() == typeof(Typist)).ToList()
                     .ForEach(x => {
-                        filterStaff.Add(x.ShallowClone());
+                        staff.Add(x.ShallowClone());
                     });
 
             }
-            return filterStaff;
         }
     }
 }
