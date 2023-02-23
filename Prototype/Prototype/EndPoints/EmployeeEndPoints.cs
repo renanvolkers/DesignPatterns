@@ -104,6 +104,7 @@ namespace Prototype.EndPoints
                 staff.PreferredLanguage = typeEmployee.PreferredLanguage;
                 staff.MoneyPerHours = typeEmployee.MoneyPerHours;
                 staff.Experiences = typeEmployee.Experiences;
+                staff.Name = typeEmployee.Name;
             }
 
             return staff is IStaff ? Results.Ok(typeEmployee)
