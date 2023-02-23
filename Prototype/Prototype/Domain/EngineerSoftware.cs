@@ -14,6 +14,7 @@ namespace Prototype.Domain
         public double MoneyPerHours { get; set; }
 
         public List<Experience> Experiences { get; set; } = new List<Experience>();
+        public InfoStaff InfoStaff { get; set; } = new InfoStaff();
 
         public IStaff ShallowClone()
         {
@@ -36,7 +37,7 @@ namespace Prototype.Domain
         public string GetDetails()
         {
           var list =  string.Join("\n", this.Experiences.Select(x=>x.Company));
-            return string.Format("{0} - {1} - {2} - {3}- {4} - {5} - {6}", Id, Name, Role, PreferredLanguage, WordsPerMinute,MoneyPerHours, list);
+            return string.Format("{0} - {1} - {2} - {3}- {4} - {5} - Telefone: {6} - Experiencias:{7}", Id, Name, Role, PreferredLanguage, WordsPerMinute,MoneyPerHours, InfoStaff.Phone, list);
         }
     }
 
