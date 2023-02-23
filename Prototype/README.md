@@ -19,6 +19,7 @@ Let us understand the Prototype Design Pattern with an example. In C#, when we t
 
 # Register Staff 
 
+![image](https://user-images.githubusercontent.com/5272594/221029967-3383af5a-7331-460d-a079-24fa2844b609.png)
 
 
 Configuration Program EntityFramework
