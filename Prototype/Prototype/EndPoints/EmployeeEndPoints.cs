@@ -6,7 +6,7 @@ namespace Prototype.EndPoints
 {
     public static class EmployeeEndPoints
     {
-        public static List<IStaff> staff = new();
+        public static List<IStaff> staffs = new();
         public static void MapEmployeeEndPoints(this WebApplication app)
         {
             app.MapGet("/Staff/", Get)
@@ -32,6 +32,11 @@ namespace Prototype.EndPoints
                 .Produces(StatusCodes.Status400BadRequest)
                 .WithName("PostEngineerSoftware")
                 .WithOpenApi();
+            app.MapPut("/EngineerSoftware/", PutEngineerSoftware)
+                .ProducesValidationProblem()
+                .Produces(StatusCodes.Status400BadRequest)
+                .WithName("PutEngineerSoftware")
+                .WithOpenApi();
 
             app.MapPost("/Typist/", PostTypist)
                 .ProducesValidationProblem()
@@ -40,58 +45,76 @@ namespace Prototype.EndPoints
                 .WithOpenApi();
 
 
+
+
         }
 
         public static IResult Get([FromQuery]TypeEmployee typeEmployee)
         {
-            var filterStaff = Application.FilterStaff(typeEmployee, staff);
+            var filterStaff = Application.FilterStaff(typeEmployee, staffs);
 
             return filterStaff is List<IStaff> ? Results.Ok(filterStaff.Select(x => x.GetDetails()))
                                   : Results.NotFound();
         }
         public static IResult GetEngineerSoftware()
         {
-            var filterStaff = Application.FilterStaff(TypeEmployee.EngineerSoftware, staff);
+            var filterStaff = Application.FilterStaff(TypeEmployee.EngineerSoftware, staffs);
 
-            return filterStaff is List<EngineerSoftware> ? Results.Ok(filterStaff.Select(x => x.GetDetails()))
+            return filterStaff is List<IStaff> ? Results.Ok(filterStaff.Select(x => x.GetDetails()))
                                   : Results.NotFound();
         }
         
         public static IResult GetTypist()
         {
-            var filterStaff = Application.FilterStaff(TypeEmployee.Typist, staff);
+            var filterStaff = Application.FilterStaff(TypeEmployee.Typist, staffs);
 
-            return filterStaff is List<Typist> ? Results.Ok(filterStaff.Select(x => x.GetDetails()))
+            return filterStaff is List<IStaff> ? Results.Ok(filterStaff.Select(x => x.GetDetails()))
                                   : Results.NotFound();
         }
         public static IResult DeepClone([FromQuery] TypeEmployee typeEmployee)
         {
-            var filterStaff = Application.DeepClone(typeEmployee, staff);
+            var filterStaff = Application.DeepClone(typeEmployee, staffs);
 
             return filterStaff is List<IStaff> ? Results.Ok(filterStaff.Select(x=>x.GetDetails()))
                                   : Results.NotFound();
         }
         public static IResult ShallowClone([FromQuery] TypeEmployee typeEmployee)
         {
-            var filterStaff = Application.ShallowClone(typeEmployee, staff);
+            Application.ShallowClone(typeEmployee, staffs);
+           
 
-            return filterStaff is List<IStaff> ? Results.Ok(filterStaff.Select(x => x.GetDetails()))
+            return staffs is List<IStaff> ? Results.Ok(staffs.Select(x => x.GetDetails()))
                                   : Results.NotFound();
         }
 
         public static IResult PostEngineerSoftware(EngineerSoftware typeEmployee)
         {
-            staff.Add(typeEmployee);
+            typeEmployee.Id = Guid.NewGuid();
+            staffs.Add(typeEmployee);
 
-            return staff is List<IStaff> ? Results.Ok(typeEmployee)
+            return staffs is List<IStaff> ? Results.Ok(typeEmployee)
+                                  : Results.NotFound();
+        }
+        public static IResult PutEngineerSoftware(EngineerSoftware typeEmployee)
+        {
+            EngineerSoftware staff = (EngineerSoftware)Application.GetById(typeEmployee.Id, staffs);
+            if (staff !=null)
+            {
+                staff.WordsPerMinute = typeEmployee.WordsPerMinute;
+                staff.PreferredLanguage = typeEmployee.PreferredLanguage;
+                staff.MoneyPerHours = typeEmployee.MoneyPerHours;
+                staff.Experiences = typeEmployee.Experiences;
+            }
+
+            return staff is IStaff ? Results.Ok(typeEmployee)
                                   : Results.NotFound();
         }
 
         public static IResult PostTypist(Typist typeEmployee)
         {
-            staff.Add(typeEmployee);
+            staffs.Add(typeEmployee);
 
-            return staff is List<IStaff> ? Results.Ok(typeEmployee)
+            return staffs is List<IStaff> ? Results.Ok(typeEmployee)
                                   : Results.NotFound();
         }
 
