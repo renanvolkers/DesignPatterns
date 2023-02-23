@@ -4,7 +4,7 @@ namespace Prototype.Domain
 {
     public class Typist : IStaff
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
         public int WordsPerMinute { get; set; }
         public string? Name { get; set; }
         public string? Role { get; set; }
