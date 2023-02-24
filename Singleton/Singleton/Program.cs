@@ -1,4 +1,5 @@
 using Microsoft.OpenApi.Models;
+using Singleton.EndPoints;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -35,7 +36,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.MapEndPoints();
 app.Run();
 
 
