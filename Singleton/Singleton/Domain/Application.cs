@@ -24,17 +24,17 @@
 
         public VetorExercice<string> SameInstance()
         {
-            // Conseguimos obter a instancia do nosso singleton através do método GetSingleton
+            VetorExercice<string> vetor 
             var mySingleton = SingletonApp.GetMySingleton();
 
-            // Adicionamos uma string na lista para avaliar se ele realmente irá retornar a mesma instancia.
             mySingleton.TestSingleton.Add("Linha 1");
 
-            // Criamos outra variável para testar se esta é a mesma instancia da classe MySingleton.
             var sameSingleton = SingletonApp.GetMySingleton();
 
-            // Adicionamos outra string na lista
             sameSingleton.TestSingleton.Add("Linha 2");
+
+
+
         }
     }
     public class VetorExercice<T>where T : new()
