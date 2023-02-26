@@ -15,9 +15,9 @@ builder.Services.AddSwaggerGen(op =>
 {
     op.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "Delivery Pizza",
+        Title = "Singleton",
         Version = "version",
-        Description = "The Goal project is show the use pattern Abstract Factory",
+        Description = "The Goal project is show the use pattern Singleton",
         Contact = new OpenApiContact
         {
             Name = "Renan Alpoim Volkers",
