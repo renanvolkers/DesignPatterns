@@ -2,10 +2,10 @@
 
 namespace Singleton.EndPoints
 {
-    public static class  EndPoints
+    public static class  SingletonAppEndPoints
     {
         public static List<int> contagem { get; set; } = new List<int>();
-        public static void MapEndPoints(this WebApplication app)
+        public static void MapSingletonAppEndPoints(this WebApplication app)
         {
             app.MapGet("/Singleton/", Get)
                 .ProducesValidationProblem()
