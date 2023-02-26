@@ -36,7 +36,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.MapEndPoints();
+app.MapSingletonAppEndPoints();
 app.Run();
 
 
