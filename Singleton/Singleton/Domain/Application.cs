@@ -15,31 +15,38 @@
             {
                if(vetorExercice.VetorInicial[i-1] > vetorExercice.VetorInicial[i])
                 {
-                    vetorExercice.VetorOrdenador[i - 1] = vetorExercice.VetorInicial[i - 1];
-                    vetorExercice.VetorOrdenador[i] = vetorExercice.VetorInicial[i];
+                    vetorExercice.VetorResultado[i - 1] = vetorExercice.VetorInicial[i - 1];
+                    vetorExercice.VetorResultado[i] = vetorExercice.VetorInicial[i];
                 }
             }
+            vetorExercice.ConfigVetorResultado = "Order";
             return vetorExercice;
         }
 
         public VetorExercice<string> SameInstance()
         {
-            VetorExercice<string> vetor 
+            var vetorSingleton = new VetorExercice<string>();
             var mySingleton = SingletonApp.GetMySingleton();
 
-            mySingleton.TestSingleton.Add("Linha 1");
+            mySingleton.TestSingleton.Add("Dog");
+            mySingleton.TestSingleton.Add("Cat");
 
             var sameSingleton = SingletonApp.GetMySingleton();
 
-            sameSingleton.TestSingleton.Add("Linha 2");
+            sameSingleton.TestSingleton.Add("Gavião");
+            sameSingleton.TestSingleton.Add("EAGLE");
 
-
+            vetorSingleton.VetorResultado = mySingleton.TestSingleton.ToArray();
+            vetorSingleton.VetorInicial = sameSingleton.TestSingleton.ToArray();
+            vetorSingleton.ConfigVetorResultado = "User same instance";
+            return vetorSingleton;
 
         }
     }
-    public class VetorExercice<T>where T : new()
+    public class VetorExercice<T>
     {
         public T[] VetorInicial { get; set; } = new T[50];
-        public T[] VetorOrdenador { get; set; } = new T[50];
+        public T[] VetorResultado { get; set; } = new T[50];
+        public string? ConfigVetorResultado { get; set; }
     }
 }
