@@ -16,7 +16,7 @@ is a creational design pattern that lets you ensure that a class has only one in
 
 # Get Instance
 
-![image](https://user-images.githubusercontent.com/5272594/221029967-3383af5a-7331-460d-a079-24fa2844b609.png)
+![image](https://user-images.githubusercontent.com/5272594/221732770-26d12fcf-d1a2-4298-b1fc-f0816fc4baba.png)
 
 
 Configuration Program EntityFramework
