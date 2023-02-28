@@ -19,6 +19,13 @@ namespace Singleton.EndPoints
                 .WithName("SameInstance")
                 .WithOpenApi();
 
+
+            app.MapGet("/BlueSort/", GetBlueSort)
+                .ProducesValidationProblem()
+                .Produces(StatusCodes.Status400BadRequest)
+                .WithName("GetBlueSort")
+                .WithOpenApi();
+
         }
 
         public static IResult Get()
@@ -36,6 +43,15 @@ namespace Singleton.EndPoints
             return result is VetorExercice<string> ? Results.Ok(result)
                                   : Results.NotFound();
         }
+
+        public static IResult GetBlueSort()
+        {
+            var teste = new Application();
+            var result = teste.bubbleSort();
+            return result is VetorExercice<int> ? Results.Ok(result)
+                                  : Results.NotFound();
+        }
+
 
 
     }
