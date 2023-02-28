@@ -42,11 +42,40 @@
             return vetorSingleton;
 
         }
+        public VetorExercice<int> bubbleSort()
+        {
+            var vetorExercice = new VetorExercice<int>();
+
+            vetorExercice.VetorInicial[0] = 99;
+            for (int i = 1; i < vetorExercice.VetorInicial.Length; i++)
+            {
+
+                vetorExercice.VetorInicial[i] = new Random().Next(0, 200);
+                vetorExercice.VetorResultado[i] = vetorExercice.VetorInicial[i];
+            }
+            int tamanho = vetorExercice.VetorResultado.Length;
+
+            for (int i = tamanho - 1; i >= 1; i--)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    if (vetorExercice.VetorResultado[j] > vetorExercice.VetorResultado[j + 1])
+                    {
+                        int aux = vetorExercice.VetorResultado[j];
+                        vetorExercice.VetorResultado[j] = vetorExercice.VetorResultado[j + 1];
+                        vetorExercice.VetorResultado[j + 1] = aux;
+                    }
+                }
+            }
+
+            return vetorExercice;
+        }
     }
     public class VetorExercice<T>
     {
         public T[] VetorInicial { get; set; } = new T[50];
         public T[] VetorResultado { get; set; } = new T[50];
         public string? ConfigVetorResultado { get; set; }
+
     }
 }
