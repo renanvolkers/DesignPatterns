@@ -1,4 +1,5 @@
 using Microsoft.OpenApi.Models;
+using Singleton.Domain;
 using Singleton.EndPoints;
 using System.Text.Json.Serialization;
 
@@ -9,8 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers().AddJsonOptions(options =>
            options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
-
-
+builder.Services.Configure<UnitOptions>(builder.Configuration.GetSection("Units"));
+builder.Services.AddSingleton<ISingletonService, SingletonService>();
 builder.Services.AddSwaggerGen(op =>
 {
     op.SwaggerDoc("v1", new OpenApiInfo
