@@ -13,12 +13,17 @@ namespace Singleton.EndPoints
                 .WithName("Singleton")
                 .WithOpenApi();
 
+            app.MapGet("/ConfigSingletonMicrosoftNetCore/", GetSingletoNetCore)
+                .ProducesValidationProblem()
+                .Produces(StatusCodes.Status400BadRequest)
+                .WithName("ConfigSingletonMicrosoftNetCore")
+                .WithOpenApi();
+
             app.MapGet("/SameInstance/", GetSingletoVetor)
                 .ProducesValidationProblem()
                 .Produces(StatusCodes.Status400BadRequest)
                 .WithName("SameInstance")
                 .WithOpenApi();
-
 
             app.MapGet("/BlueSort/", GetBlueSort)
                 .ProducesValidationProblem()
@@ -43,6 +48,15 @@ namespace Singleton.EndPoints
             return result is VetorExercice<string> ? Results.Ok(result)
                                   : Results.NotFound();
         }
+
+        public static IResult GetSingletoNetCore(ISingletonService singletonService)
+        {
+            var result = singletonService.GetUnits();
+           
+            return result is UnitOptions ? Results.Ok(result)
+                                  : Results.NotFound();
+        }
+
 
         public static IResult GetBlueSort()
         {
