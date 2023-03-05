@@ -17,5 +17,9 @@ namespace Adapter.Domain
         {
             throw new NotImplementedException("Update MySql");
         }
+        public void ConectionMySql()
+        {
+            throw new NotImplementedException("Conection MySql");
+        }
     }
 }

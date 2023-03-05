@@ -3,6 +3,11 @@ namespace Adapter.Domain
 {
     public class OracleCommands : DbAdapter
     {
+        public void ConectionDb()
+        {
+            throw new NotImplementedException("Conection Oracle");
+        }
+
         public void Delete()
         {
             throw new NotImplementedException("Delete Oracle");

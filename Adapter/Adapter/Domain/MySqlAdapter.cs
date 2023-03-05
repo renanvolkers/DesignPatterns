@@ -21,5 +21,10 @@
         {
             this.SqlCommand.UpdateMySql();
         }
+
+        public void ConectionDb()
+        {
+            this.SqlCommand.ConectionMySql();
+        }
     }
 }
