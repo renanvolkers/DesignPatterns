@@ -2,13 +2,12 @@
 {
     public static class AdapterEndPoints
     {
-        public static List<int> contagem { get; set; } = new List<int>();
         public static void MapSingletonAppEndPoints(this WebApplication app)
         {
-            app.MapGet("/Singleton/", Get)
+            app.MapGet("/Adapter/", Get)
                 .ProducesValidationProblem()
                 .Produces(StatusCodes.Status400BadRequest)
-                .WithName("Singleton")
+                .WithName("Adapter")
                 .WithOpenApi();
 
         }
