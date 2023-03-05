@@ -9,17 +9,17 @@
         }
         public void Delete()
         {
-            throw new NotImplementedException();
+            this.SqlCommand.DeleteMySql();
         }
 
         public void Insert()
         {
-            throw new NotImplementedException();
+            this.SqlCommand.InsertMySql();
         }
 
         public void Update()
         {
-            throw new NotImplementedException();
+            this.SqlCommand.UpdateMySql();
         }
     }
 }
