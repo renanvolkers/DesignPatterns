@@ -1,8 +1,13 @@
-﻿namespace Adapter.EndPoints
+﻿using Adapter.Domain;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
+using System.Reflection.Metadata;
+
+namespace Adapter.EndPoints
 {
     public static class AdapterEndPoints
     {
-        public static void MapSingletonAppEndPoints(this WebApplication app)
+        public static void MapAdapterAppEndPoints(this WebApplication app)
         {
             app.MapGet("/Adapter/", Get)
                 .ProducesValidationProblem()
@@ -12,13 +17,27 @@
 
         }
 
-        public static IResult Get()
+        public static IResult Get([FromQuery]DataBase type)
         {
-            //var teste = new Application();
-            //var result = teste.VerificarVetor();
-            //return result is VetorExercice<int> ? Results.Ok(result)
-            //                      : Results.NotFound();
-            return null;
+            DbAdapter conection;
+            if(type == DataBase.Oracle)
+            {
+                conection = new OracleCommands();
+            }
+            else
+            {
+                conection = new MySqlAdapter(new MySqlCommands());
+            }
+
+            string msg = conection.ConectionDb();
+
+            
+            msg = msg + conection.Insert();
+            msg = msg + conection.Update();
+            msg = msg + conection.Delete();
+
+            return msg is string ? Results.Ok(msg)
+                                  : Results.NotFound();
         }
 
 
