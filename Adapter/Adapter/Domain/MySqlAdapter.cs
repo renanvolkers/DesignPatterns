@@ -7,24 +7,24 @@
         {
             this.SqlCommand = _sqlCommand;
         }
-        public void Delete()
+        public string Delete()
         {
-            this.SqlCommand.DeleteMySql();
+           return this.SqlCommand.DeleteMySql();
         }
 
-        public void Insert()
+        public string Insert()
         {
-            this.SqlCommand.InsertMySql();
+            return this.SqlCommand.InsertMySql();
         }
 
-        public void Update()
+        public string Update()
         {
-            this.SqlCommand.UpdateMySql();
+            return this.SqlCommand.UpdateMySql();
         }
 
-        public void ConectionDb()
+        public string ConectionDb()
         {
-            this.SqlCommand.ConectionMySql();
+            return this.SqlCommand.ConectionMySql();
         }
     }
 }

@@ -3,24 +3,24 @@ namespace Adapter.Domain
 {
     public class OracleCommands : DbAdapter
     {
-        public void ConectionDb()
+        public string ConectionDb()
         {
-            throw new NotImplementedException("Conection Oracle");
+           return "Conection Oracle";
         }
 
-        public void Delete()
+        public string Delete()
         {
-            throw new NotImplementedException("Delete Oracle");
+            return "Delete Oracle";
         }
 
-        public void Insert()
+        public string Insert()
         {
-            throw new NotImplementedException("Insert Oracle");
+            return "Insert Oracle";
         }
 
-        public void Update()
+        public string Update()
         {
-            throw new NotImplementedException("Update Oracle");
+            return "Update Oracle";
         }
     }
 }

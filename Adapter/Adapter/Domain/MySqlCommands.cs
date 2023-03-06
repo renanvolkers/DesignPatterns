@@ -3,23 +3,23 @@ namespace Adapter.Domain
 {
     public class MySqlCommands 
     {
-        public void DeleteMySql()
+        public string DeleteMySql()
         {
-            throw new NotImplementedException("Delete MySql");
+            return "Delete MySql";
         }
 
-        public void InsertMySql()
+        public string InsertMySql()
         {
-            throw new NotImplementedException("Insert MySql");
+            return "Insert MySql";
         }
 
-        public void UpdateMySql()
+        public string UpdateMySql()
         {
-            throw new NotImplementedException("Update MySql");
+            return "Update MySql";
         }
-        public void ConectionMySql()
+        public string ConectionMySql()
         {
-            throw new NotImplementedException("Conection MySql");
+           return "Conection MySql";
         }
     }
 }
