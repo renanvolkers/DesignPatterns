@@ -2,9 +2,9 @@
 {
     public interface DbAdapter
     {
-        public void Insert();
-        public void Update();
-        public void Delete();
-        public void ConectionDb();
+        public string Insert();
+        public string Update();
+        public string Delete();
+        public string ConectionDb();
     }
 }
