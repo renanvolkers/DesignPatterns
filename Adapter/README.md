@@ -11,15 +11,13 @@
 
 
 
-# Prototype
-All prototype classes should have a common interface that makes it possible to copy objects even if their concrete classes are unknown. Prototype objects can produce full copies since objects of the same class can access each other’s private fields.
+# Adapter
+ Is a structural design pattern that allows objects with incompatible interfaces to collaborate.
 
-Understanding the Prototype Design Pattern in C#:
-Let us understand the Prototype Design Pattern with an example. In C#, when we try to copy one object to another object using the assignment (=) operator, then both the objects will share the same memory address. And the reason is the assignment operator (=) copies the reference, not the object except when there is a value type field. This operator will always copy the reference, not the actual object.
+# Conection Database  
 
-# Register Staff 
+![image](https://user-images.githubusercontent.com/5272594/223296962-89b2873a-221d-4f31-9ce0-e571a89ebed0.png)
 
-![image](https://user-images.githubusercontent.com/5272594/221029967-3383af5a-7331-460d-a079-24fa2844b609.png)
 
 
 Configuration Program EntityFramework
