@@ -1,7 +1,5 @@
 ﻿using Adapter.Domain;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.VisualBasic;
-using System.Reflection.Metadata;
 
 namespace Adapter.EndPoints
 {
