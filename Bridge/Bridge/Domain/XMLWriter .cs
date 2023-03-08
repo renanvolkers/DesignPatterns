@@ -10,7 +10,7 @@ namespace Bridge.Domain
     {
         string fileName = "EmployeeSalaryDetails.xml";
         XmlSerializer xmlSerializer = new XmlSerializer(typeof(Employee));
-        FileStream fileStream;
+        FileStream? fileStream;
 
         public void WriteFile(Employee employee)
         {
