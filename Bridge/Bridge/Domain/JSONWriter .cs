@@ -16,6 +16,6 @@ namespace Bridge.Domain
             File.WriteAllText(fileName, serializedEmployeeData);
             Console.WriteLine($"EmployeeId# : {employee.Id} salary details sucessfully written to {fileName} ");
         }
-    }    {
     }
 }
+
