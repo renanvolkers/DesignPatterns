@@ -1,4 +1,5 @@
 
+using Bridge.EndPoints;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
 
@@ -47,6 +48,7 @@ namespace Bridge
 
             app.UseAuthorization();
 
+            app.MapBridgeAppEndPoints();
             app.Run();
         }
     }
