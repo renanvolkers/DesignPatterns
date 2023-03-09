@@ -13,9 +13,14 @@
             this.fileWriter = fileWriter;
         }
 
-        public virtual void WriteContent(Employee employee)
+        public virtual IFileWriter WriteContent(Employee employee)
         {
             fileWriter.WriteFile(employee);
+            return fileWriter;
+        }
+        public string FileName()
+        {
+            return fileWriter.FileName();
         }
     }
 }
