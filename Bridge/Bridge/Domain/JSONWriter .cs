@@ -8,13 +8,18 @@ namespace Bridge.Domain
     /// </summary>
     public class JSONWriter : IFileWriter
     {
-        string fileName = "EmployeeSalaryDetails.json";
+        const string _fileName = "EmployeeSalaryDetails.json";
+
+        public string FileName()
+        {
+            return _fileName;
+        }
 
         public void WriteFile(Employee employee)
         {
             var serializedEmployeeData = JsonSerializer.Serialize(employee);
-            File.WriteAllText(fileName, serializedEmployeeData);
-            Console.WriteLine($"EmployeeId# : {employee.Id} salary details sucessfully written to {fileName} ");
+            File.WriteAllText(_fileName, serializedEmployeeData);
+            Console.WriteLine($"EmployeeId# : {employee.Id} salary details sucessfully written to {_fileName} ");
         }
     }
 }
