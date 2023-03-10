@@ -7,7 +7,7 @@ namespace Bridge.EndPoints
     {
         public static void MapBridgeAppEndPoints(this WebApplication app)
         {
-            app.MapGet("/Bridge/", Post)
+            app.MapPost("/Bridge/", Post)
                 .ProducesValidationProblem()
                 .Produces(StatusCodes.Status400BadRequest)
                 .WithName("Bridge")
@@ -15,13 +15,13 @@ namespace Bridge.EndPoints
 
         }
 
-        public static IResult Post([FromQuery]TypeFile type,Employee employee)
+        public static IResult Post(Employee employee,[FromQuery]TypeFile type)
         {
             Application app = new Application();
-            app.FileEmployee(employee, type);
- 
+           var fileName = app.FileEmployee(employee, type);
 
-            return employee is Employee ? Results.Ok(employee)
+            string path = Path.GetFullPath(fileName);
+            return employee is Employee ? Results.File(path)
                                   : Results.NotFound();
         }
 
