@@ -7,5 +7,6 @@
     public interface IFileWriter
     {
         void WriteFile(Employee employee);
+        string FileName();
     }
 }
