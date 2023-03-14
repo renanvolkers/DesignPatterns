@@ -12,9 +12,9 @@
             this.name = name;
             this.position = position;
         }
-        public void ShowEmployeeDetails()
+        public string ShowEmployeeDetails()
         {
-            System.out.println(empId + " " + name +);
+            return empId + " " + name ;
         }
     }
 }
