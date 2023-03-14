@@ -4,11 +4,11 @@ namespace Composite.Domain
 {
     public class Manager : Employee
     {
-        private String name;
-        private long empId;
+        private string? Name { get; set; }
+        private long EmpId { get; set; }
         public string ShowEmployeeDetails()
         {
-            return empId + " " + name;
+            return EmpId + " " + Name;
         }
     }
 }
