@@ -16,16 +16,17 @@
             return msg;
 
         }
-    }
 
-    public void AddEmployee(Employee emp)
-    {
-        this.EmployeeList.Add(emp);
-    }
 
-    public void RemoveEmployee(Employee emp)
-    {
-        EmployeeList.Remove(emp);
+        public void AddEmployee(Employee emp)
+        {
+            EmployeeList.Add(emp);
+        }
+
+        public void RemoveEmployee(Employee emp)
+        {
+            EmployeeList.Remove(emp);
+        }
     }
 }
 
