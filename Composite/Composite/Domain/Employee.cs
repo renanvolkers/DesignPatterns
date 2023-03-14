@@ -2,6 +2,6 @@
 {
     public interface Employee
     {
-        public void ShowEmployeeDetails();
+        public string ShowEmployeeDetails();
     }
 }
