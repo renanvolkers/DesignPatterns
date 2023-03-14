@@ -1,5 +1,7 @@
 ﻿namespace Composite.Domain
 {
+
+    //Leaf
     public class Developer : Employee
     {
         private String name;

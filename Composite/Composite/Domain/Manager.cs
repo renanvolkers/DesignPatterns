@@ -2,6 +2,8 @@
 
 namespace Composite.Domain
 {
+    //Leaf
+
     public class Manager : Employee
     {
         private string? Name { get; set; }
