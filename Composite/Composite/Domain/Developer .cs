@@ -4,19 +4,19 @@
     //Leaf
     public class Developer : Employee
     {
-        private String name;
-        private long empId;
-        private String position;
+        private String Name { get; set; }
+        private long EmpId { get; set; }
+        private String Position { get; set; }
 
         public Developer(long empId, String name, String position)
         {
-            this.empId = empId;
-            this.name = name;
-            this.position = position;
+            this.EmpId = empId;
+            this.Name = name;
+            this.Position = position;
         }
         public string ShowEmployeeDetails()
         {
-            return empId + " " + name ;
+            return EmpId + " " + Name ;
         }
     }
 }
