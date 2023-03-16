@@ -16,7 +16,7 @@
         }
         public string ShowEmployeeDetails()
         {
-            return EmpId + " " + Name ;
+            return " /n " +EmpId + " " + Name + "" + Position;
         }
     }
 }
