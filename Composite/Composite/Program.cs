@@ -1,5 +1,4 @@
-
-using AbstractFactory.EndPoints;
+using Composite.EndPoints;
 using Microsoft.OpenApi.Models;
 
 namespace Composite
@@ -45,7 +44,7 @@ namespace Composite
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-            app.MapComputerEndPoints
+            app.MapCompanyEndPoints();
 
             app.Run();
         }
