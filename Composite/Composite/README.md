@@ -1,61 +1,63 @@
-<img src="https://www.eduardopires.net.br/imagens/EquinoxLogoPequenoFundoBranco.png" alt="Equinox Project"> 
 
+<picture>
+    <img width="400" align="top" height="300" alt="Elis Brasil" src="https://user-images.githubusercontent.com/5272594/225767526-6df26348-ef58-42f5-bc67-05ee906039b4.png">
+</picture>
 
-What is the Equinox Project?
+O que é o Projeto Elisconnect.Central ?
 =====================
-The Equinox Project is a open-source project written in .NET Core
+O projeto é escrito em **.NET 5** e possui um conjunto de aplicações que se dividem em Front-End e Back-End.
 
-The goal of this project is implement the most common used technologies and share with the technical community the best way to develop great applications with .NET
+O objetivo do projeto é implementar o conceito mais unificado das tecnologias seguindo a ideia de MONOLITO e dar mais velocidade nas entregas.
+As aplicações focada na operação tais 
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/6518989bea914b348c92385dda05f93d)](https://www.codacy.com/manual/EduardoPires/EquinoxProject?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EduardoPires/EquinoxProject&amp;utm_campaign=Badge_Grade)
-[![Build status](https://ci.appveyor.com/api/projects/status/rl2ja69994rt3ei6?svg=true)](https://ci.appveyor.com/project/EduardoPires/equinoxproject)
-![.NET Core](https://github.com/EduardoPires/EquinoxProject/workflows/.NET%20Core/badge.svg)
-[![License](https://img.shields.io/github/license/eduardopires/equinoxproject.svg)](LICENSE)
+
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/6518989bea914b348c92385dda05f93d)]()
+[![.NET ](https://badgen.net/badge/./.Net5/green)]()
+[![Azure](https://badgen.net/badge/icon/azure?icon=azure&label)](https://azure.microsoft.com)
+[![.NET ](https://badgen.net/badge/./Blazor/green)]()
 [![Issues open](https://img.shields.io/github/issues/eduardopires/equinoxproject.svg)](https://huboard.com/EduardoPires/EquinoxProject/)
 
-## Give a Star! :star:
-If you liked the project or if Equinox helped you, please give a star ;)
+## Quantas aplicações existem no Projeto?
 
-## Want to learn everything?  :mortar_board:
-Check my online courses at [desenvolvedor.io](https://desenvolvedor.io)
 
-## How to use:
-- You will need the latest Visual Studio 2019 and the latest .NET Core SDK.
-- ***Please check if you have installed the same runtime version (SDK) described in global.json***
-- The latest SDK and tools can be downloaded from https://dot.net/core.
 
-Also you can run the Equinox Project in Visual Studio Code (Windows, Linux or MacOS).
+## Por quê Elisconnect.Central?
 
-To know more about how to setup your enviroment visit the [Microsoft .NET Download Guide](https://www.microsoft.com/net/download)
 
-## Technologies implemented:
+## Iniciar o projeto:
+Criar na unidade C a pasta local "Elis" e dentro dela fazer o git clone.
+- Você precisa do Visual Studio 2019 e a ultima versão do .NET Core SDK na instalação existe a opção modificar e nela selecione as opções referentes a versão.
+- ***Check se está instalado algum runtime version (SDK) descrito no global.json***
+- A ultima versão SDK e pode ser baixado aqui  https://dot.net/core.
 
-- ASP.NET 5.0 (with .NET Core 5.0)
- - ASP.NET MVC Core 
- - ASP.NET WebApi Core with JWT Bearer Authentication
- - ASP.NET Identity Core
-- Entity Framework Core 5.0
-- .NET Core Native DI
-- AutoMapper
-- FluentValidator
-- MediatR
+Executar o projeto em Visual Studio.
+
+Para saber mais informações acesse [Microsoft .NET Download Guide](https://www.microsoft.com/net/download)
+
+## Tecnologias implementadas:
+
+- ASP.NET 5.0 
+ - ASP.NET MVC  
+ - ASP.NET WebApi  with JWT Bearer Authentication
+ - AspNetCore.Identity 2.2
+- Entity Framework  5.0
 - Swagger UI with JWT support
-- .NET DevPack
-- .NET DevPack.Identity
+- Hangfire
+- Radzen.Blazor 4.4
+- DataAnnotations
+- RAZOR 2.2
+- Azure.Messaging.ServiceBus
+- NUnit
+- Moq
 
-## Architecture:
+## Arquitetura:
 
-- Full architecture with responsibility separation concerns, SOLID and Clean Code
-- Domain Driven Design (Layers and Domain Model Pattern)
-- Domain Events
-- Domain Notification
-- Domain Validations
-- CQRS (Imediate Consistency)
-- Event Sourcing
-- Unit of Work
+- MVC 
 - Repository
+- Teste Unitário
 
-## News
+## Historico
 
 **v1.7 - 04/06/2021**
 - Migrated for .NET 5.0
@@ -93,24 +95,8 @@ To know more about how to setup your enviroment visit the [Microsoft .NET Downlo
 - Adding Swagger UI for better viewing and testing
 - Adding MediatR for Memory Bus Messaging
 
-## Disclaimer:
-- **NOT** intended to be a definitive solution
-- Beware to use in production way
-- Maybe you don't need a lot of implementations that is included, try avoid the **over engineering**
 
-## About the next versions
-Watch our [RoadMap](https://github.com/EduardoPires/EquinoxProject/wiki/RoadMap) to know the new changes
 
 ## Pull-Requests 
-Make a contact! Don't submit PRs for extra features, all the new features are planned
+Todas as PRs passaram por um code Reviews
 
-## Why Equinox?
-The Equinox is an astronomical event in which the plane of Earth's equator passes through the center of the Sun, which occurs twice each year, around 20 March and 23 September. [Wikipedia](https://en.wikipedia.org/wiki/Equinox)
-
-Equinox is also a series of publications (subtitle: "The Review of Scientific Illuminism") in book form that serves as the official organ of the A∴A∴, a magical order founded by Aleister Crowley :) [Wikipedia](https://en.wikipedia.org/wiki/The_Equinox)
-
-## We are Online:
-See the project running on <a href="http://equinoxproject.azurewebsites.net" target="_blank">Azure</a>
-
-## About:
-The Equinox Project was developed by [Eduardo Pires](http://eduardopires.net.br) under the [MIT license](LICENSE).
