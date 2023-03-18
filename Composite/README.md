@@ -3,7 +3,7 @@
 
 
 
-![Coverage](https://github.com/renanvolkers/DesignPatterns/main/coverage_badge.svg?sanitize=true)
+![image](https://user-images.githubusercontent.com/5272594/226099662-3db25a3c-762c-4ebf-860f-83709c372099.png)
 
 # Main Stacks
 * .NET 7 
@@ -11,9 +11,7 @@
 
 
 # Composite
-is a creational design pattern that lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
 
-# Buil Company
 Composite pattern is a partitioning design pattern and describes a group of objects that is treated the same way as a single instance of the same type of object. The intent of a composite is to “compose” objects into tree structures to represent part-whole hierarchies. It allows you to have a tree structure and ask each node in the tree structure to perform a task.
 
 The Composite Pattern has four participants:
@@ -23,8 +21,13 @@ Leaf – Leaf defines behavior for primitive objects in the composition. It repr
 Composite – Composite stores child components and implements child related operations in the component interface.
 Client – Client manipulates the objects in the composition through the component interface.
 
+
+# Buil Company
+
 ![image](https://user-images.githubusercontent.com/5272594/226099491-4fd4871c-c648-4ea6-bfd5-882aa48956fc.png)
 
+Another
+![image](https://user-images.githubusercontent.com/5272594/226099855-e0d89edb-c5fc-409f-bb9c-81f4cbad7b0b.png)
 
 Commentary
 We have think in the ideia that the CLASS COMPOSITE it has an implement and heracy.
