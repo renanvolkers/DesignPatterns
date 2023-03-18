@@ -10,17 +10,25 @@
 * Minimal API
 
 
-# Builder
+# Composite
 is a creational design pattern that lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
 
-# Buil Computer
-# Instal Software and Driver
+# Buil Company
+Composite pattern is a partitioning design pattern and describes a group of objects that is treated the same way as a single instance of the same type of object. The intent of a composite is to “compose” objects into tree structures to represent part-whole hierarchies. It allows you to have a tree structure and ask each node in the tree structure to perform a task.
 
-Imagine that you're building a computer system from scratch. There are many components to consider, such as the processor, motherboard, memory, storage, and graphics card. Each component has its own set of attributes and specifications, and you need to carefully select the right ones to create a computer that performs well and meets your needs.
+The Composite Pattern has four participants:
 
-One approach to building a computer system is to use the Builder design pattern. The Builder pattern separates the construction of an object from its representation, allowing you to create complex objects step by step. In the context of computer hardware and software, the Builder pattern can be used to create a custom computer system with specific components and configurations.
+Component – Component declares the interface for objects in the composition and for accessing and managing its child components. It also implements default behavior for the interface common to all classes as appropriate.
+Leaf – Leaf defines behavior for primitive objects in the composition. It represents leaf objects in the composition.
+Composite – Composite stores child components and implements child related operations in the component interface.
+Client – Client manipulates the objects in the composition through the component interface.
 
-![image](https://user-images.githubusercontent.com/5272594/219114973-56125f8b-e2c7-4dd7-8c8a-7b829f320d67.png)
+![image](https://user-images.githubusercontent.com/5272594/226099491-4fd4871c-c648-4ea6-bfd5-882aa48956fc.png)
+
+
+Commentary
+We have think in the ideia that the CLASS COMPOSITE it has an implement and heracy.
+
 
 
 
