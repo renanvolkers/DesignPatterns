@@ -2,7 +2,8 @@
 {
     public class CompanyDirectory : Employee
     {
-
+        //Composite is class where is the Array,List, 
+        //Employee have been use how propriely and Implement interface
         private List<Employee> EmployeeList { get; set; } = new List<Employee>();
 
 
