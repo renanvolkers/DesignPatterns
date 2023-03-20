@@ -19,6 +19,7 @@ Client – Client manipulates the objects in the composition through the compone
 
 
 # Buil Company
+Hierarchical structure refers to a company's chain of command, typically from senior and executive management to general employees. In other words, this structure applies to organizations with a single leader and a stream of subordinates below them.
 
 
 
