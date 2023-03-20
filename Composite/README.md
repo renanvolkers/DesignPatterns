@@ -23,6 +23,7 @@ Idea idenfiq Composite is class where is the Array,List,
 # Buil Company
 Hierarchical structure refers to a company's chain of command, typically from senior and executive management to general employees. In other words, this structure applies to organizations with a single leader and a stream of subordinates below them.
 
+![image](https://user-images.githubusercontent.com/5272594/226237071-55761c98-23c3-4425-a8df-82feb1a3dddb.png)
 
 
 Another
