@@ -17,6 +17,8 @@ Leaf – Leaf defines behavior for primitive objects in the composition. It repr
 Composite – Composite stores child components and implements child related operations in the component interface.
 Client – Client manipulates the objects in the composition through the component interface.
 
+Obs:
+Idea idenfiq Composite is class where is the Array,List,
 
 # Buil Company
 Hierarchical structure refers to a company's chain of command, typically from senior and executive management to general employees. In other words, this structure applies to organizations with a single leader and a stream of subordinates below them.
