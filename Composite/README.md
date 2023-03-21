@@ -1,26 +1,43 @@
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-[![GitHub version](https://badge.fury.io/gh/Naereen%2FStrapDown.js.svg)](https://github.com/Naereen/StrapDown.js)
 
-
-
-![Coverage](https://github.com/renanvolkers/DesignPatterns/main/coverage_badge.svg?sanitize=true)
 
 # Main Stacks
 * .NET 7 
 * Minimal API
 
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![GitHub version](https://badge.fury.io/gh/Naereen%2FStrapDown.js.svg)](https://github.com/Naereen/StrapDown.js)
+# Composite
 
-# Builder
-is a creational design pattern that lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
+Composite pattern is a partitioning design pattern and describes a group of objects that is treated the same way as a single instance of the same type of object. The intent of a composite is to “compose” objects into tree structures to represent part-whole hierarchies. It allows you to have a tree structure and ask each node in the tree structure to perform a task.
 
-# Buil Computer
-# Instal Software and Driver
+The Composite Pattern has four participants:
 
-Imagine that you're building a computer system from scratch. There are many components to consider, such as the processor, motherboard, memory, storage, and graphics card. Each component has its own set of attributes and specifications, and you need to carefully select the right ones to create a computer that performs well and meets your needs.
+Component – Component declares the interface for objects in the composition and for accessing and managing its child components. It also implements default behavior for the interface common to all classes as appropriate.
+Leaf – Leaf defines behavior for primitive objects in the composition. It represents leaf objects in the composition.
+Composite – Composite stores child components and implements child related operations in the component interface.
+Client – Client manipulates the objects in the composition through the component interface.
 
-One approach to building a computer system is to use the Builder design pattern. The Builder pattern separates the construction of an object from its representation, allowing you to create complex objects step by step. In the context of computer hardware and software, the Builder pattern can be used to create a custom computer system with specific components and configurations.
+Obs:
+Idea idenfiq Composite is class where is the Array,List,
 
-![image](https://user-images.githubusercontent.com/5272594/219114973-56125f8b-e2c7-4dd7-8c8a-7b829f320d67.png)
+# Buil Company
+Hierarchical structure refers to a company's chain of command, typically from senior and executive management to general employees. In other words, this structure applies to organizations with a single leader and a stream of subordinates below them.
+
+![image](https://user-images.githubusercontent.com/5272594/226237071-55761c98-23c3-4425-a8df-82feb1a3dddb.png)
+
+
+Another
+![image](https://user-images.githubusercontent.com/5272594/226099855-e0d89edb-c5fc-409f-bb9c-81f4cbad7b0b.png)
+
+
+
+
+![image](https://user-images.githubusercontent.com/5272594/226099662-3db25a3c-762c-4ebf-860f-83709c372099.png)
+
+
+Commentary
+We have think in the ideia that the CLASS COMPOSITE it has an implement and heracy.
+
 
 
 
