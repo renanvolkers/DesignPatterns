@@ -1,6 +1,6 @@
 ﻿namespace Decorator.Domain
 {
-    public class Book
+    public class Book : LibraryItem
     {
         private string Author;
         private string Title;
@@ -9,7 +9,14 @@
         {
             this.Author = author;
             this.Title = title;
-        }   
+        }
 
+        public override string Display()
+        {
+            var msg = "\nBook ------------- ";
+            msg = string.Concat(msg, Author); 
+            msg= string.Concat(msg, Title);
+           return msg;
+        }
     }
 }
