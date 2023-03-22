@@ -12,7 +12,7 @@
             set { _numCopies = value; }
         }
 
-        public abstract void Display();
+        public abstract string Display();
     }
 }
 
