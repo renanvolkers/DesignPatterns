@@ -1,10 +1,10 @@
 ﻿namespace Decorator.Domain
 {
     /// <summary>
-    /// The 'ConcreteDecorator' class
+    /// The 'Decorator' abstract class
     /// </summary>
-    public class Decorator
+    public class Decorator 
     {
-        protected readonly List<string> Borrowers = new List<string>();
+        protected LibraryItem libraryItem;
     }
 }
