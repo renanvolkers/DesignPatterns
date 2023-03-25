@@ -8,6 +8,10 @@ namespace Decorator.Domain
     public class Decorator : Component
     {
         protected Component component;
+        public void SetComponent(Component component)
+        {
+            this.component = component;
+        }
 
     }
 }
