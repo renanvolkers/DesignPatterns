@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-
+﻿
 namespace Decorator.Domain
 {
     /// <summary>
@@ -11,6 +10,14 @@ namespace Decorator.Domain
         public void SetComponent(Component component)
         {
             this.component = component;
+        }
+
+        public override void Operation()
+        {
+            if (component != null)
+            {
+                component.Operation();
+            }
         }
 
     }
