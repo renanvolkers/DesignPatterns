@@ -1,10 +1,13 @@
-﻿namespace Decorator.Domain
+﻿using System.ComponentModel;
+
+namespace Decorator.Domain
 {
     /// <summary>
     /// The 'Decorator' abstract class
     /// </summary>
-    public class Decorator 
+    public class Decorator : Component
     {
-        protected LibraryItem libraryItem;
+        protected Component component;
+
     }
 }
