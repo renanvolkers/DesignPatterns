@@ -17,7 +17,8 @@ namespace Decorator.Domain
 
         public override string Display()
         {
-            var msg ="\nVideo ----- ";
+            var msg = Environment.NewLine + "Video ----- ";
+            
             string.Concat(msg, " Director:", this.Diretor);
             string.Concat(msg, " Director:", this.Title);
             string.Concat(msg, " Director:", this.NumCopies);
