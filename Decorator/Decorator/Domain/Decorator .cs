@@ -4,20 +4,19 @@ namespace Decorator.Domain
     /// <summary>
     /// The 'Decorator' abstract class
     /// </summary>
-    public class Decorator : Component
+    public class Decorator : LibraryItem
     {
-        protected Component component;
-        public void SetComponent(Component component)
+        protected LibraryItem _libraryItem;
+        public void SetComponent(LibraryItem libraryItem)
         {
-            this.component = component;
+            this._libraryItem = libraryItem;
         }
 
-        public override void Operation()
+
+
+        public override string Display()
         {
-            if (component != null)
-            {
-                component.Operation();
-            }
+          return  this._libraryItem.Display();    
         }
 
     }
